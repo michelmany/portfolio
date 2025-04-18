@@ -46,17 +46,17 @@ export default function Footer() {
 
                     <div className="flex space-x-4">
                         {socialLinks.map((link: any) => (
-
-                            key = {link.id}
-                            href={link.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="p-2 rounded-full text-slate-600 hover:text-teal-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-teal-400 dark:hover:bg-slate-800 transition-colors"
-                            aria-label={`Visit ${link.platform}`}
+                            <a
+                                key={link.id}
+                                href={link.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="p-2 rounded-full text-slate-600 hover:text-teal-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:text-teal-400 dark:hover:bg-slate-800 transition-colors"
+                                aria-label={`Visit ${link.platform}`}
                             >
-                        {renderIcon(link.icon)}
+                                {renderIcon(link.icon)}
                             </a>
-                            ))}
+                        ))}
                     </div>
                 </div>
             </div>
