@@ -1,16 +1,21 @@
 'use client';
 
-import Link from 'next/link';
 import {Github, Linkedin, Mail, Twitter} from 'lucide-react';
 import {useEffect, useState} from 'react';
 
+interface SocialLink {
+    id: string;
+    platform: string;
+    url: string;
+    icon: string;
+}
+
 export default function Footer() {
-    const [socialLinks, setSocialLinks] = useState([]);
-    const [year, setYear] = useState(new Date().getFullYear());
+    const [socialLinks, setSocialLinks] = useState<SocialLink[]>([]);
+    const [year] = useState(new Date().getFullYear());
 
     useEffect(() => {
-        // In a real implementation, this would fetch from your API
-        // For now, let's use mock data
+        // Todo: Fetch social links from an API or a config file
         setSocialLinks([
             {id: '1', platform: 'github', url: 'https://github.com/michelmany', icon: 'github'},
             {id: '2', platform: 'linkedin', url: 'https://linkedin.com/in/michelmany', icon: 'linkedin'},
@@ -45,7 +50,7 @@ export default function Footer() {
                     </div>
 
                     <div className="flex space-x-4">
-                        {socialLinks.map((link: any) => (
+                        {socialLinks.map((link: SocialLink) => (
                             <a
                                 key={link.id}
                                 href={link.url}
