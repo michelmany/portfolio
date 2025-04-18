@@ -39,7 +39,7 @@ export default function ContactPage() {
             setSubmitSuccess(true);
             setTimeout(() => setSubmitSuccess(false), 5000);
         } catch (error) {
-            setSubmitError('There was an error sending your message. Please try again.');
+            setSubmitError(error + ': There was an error sending your message. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -52,7 +52,7 @@ export default function ContactPage() {
                     Contact Me
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
-                    I'm available for freelance projects, full-time positions, and consulting opportunities. Let's
+                    I&apos;m available for freelance projects, full-time positions, and consulting opportunities. Let&apos;s
                     discuss how I can help with your project.
                 </p>
 
@@ -150,7 +150,7 @@ export default function ContactPage() {
                                 {submitSuccess && (
                                     <div
                                         className="mt-4 p-3 bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-md">
-                                        Your message has been sent successfully. I'll get back to you as soon as
+                                        Your message has been sent successfully. I&apos;ll get back to you as soon as
                                         possible.
                                     </div>
                                 )}

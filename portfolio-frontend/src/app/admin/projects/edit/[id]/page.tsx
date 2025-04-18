@@ -26,7 +26,6 @@ interface Project {
 
 export default function EditProjectPage() {
     const {id} = useParams();
-    const router = useRouter();
     const [project, setProject] = useState<Project | null>(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);

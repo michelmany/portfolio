@@ -2,7 +2,7 @@
 
 import {useState, useEffect} from 'react';
 import {useRouter} from 'next/navigation';
-import {X, Upload, Plus, ChevronUp, ChevronDown} from 'lucide-react';
+import {X, Plus, ChevronUp, ChevronDown} from 'lucide-react';
 
 interface ProjectImage {
     id: string;
@@ -150,7 +150,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
             // Redirect to projects list
             router.push('/admin/projects');
         } catch (error) {
-            setSubmitError('An error occurred while saving the project');
+            setSubmitError(error + ': An error occurred while saving the project');
         } finally {
             setIsSubmitting(false);
         }

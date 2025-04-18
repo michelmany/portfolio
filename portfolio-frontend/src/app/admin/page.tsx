@@ -2,7 +2,7 @@
 
 import {useState, useEffect} from 'react';
 import Link from 'next/link';
-import {Briefcase, FileText, Github, Users, Link as LinkIcon, ArrowRight} from 'lucide-react';
+import {Briefcase, FileText, Github, Link as LinkIcon, ArrowRight} from 'lucide-react';
 
 export default function AdminDashboardPage() {
     const [stats, setStats] = useState({
