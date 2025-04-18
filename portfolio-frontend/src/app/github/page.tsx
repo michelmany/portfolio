@@ -27,13 +27,13 @@ export default function GithubPage() {
         const mockRepos = [
             {
                 id: 1,
-                name: 'portfolio-website',
-                description: 'My personal portfolio website built with Next.js and Tailwind CSS',
-                html_url: 'https://github.com/michelmany/portfolio-website',
-                stargazers_count: 15,
-                forks_count: 5,
+                name: 'portfolio',
+                description: 'This is my portfolio. Backend: nodejs, typescript, express and prisma. Frontend: nextjs, typescript, tailwind css, react hooks & context api, axios for api integration and responsive design with mobile-first approach',
+                html_url: 'https://github.com/michelmany/portfolio',
+                stargazers_count: 1,
+                forks_count: 0,
                 language: 'TypeScript',
-                topics: ['nextjs', 'tailwindcss', 'portfolio', 'react'],
+                topics: ['nextjs', 'tailwindcss', 'nodejs', 'react', 'typescript', 'express', 'prisma'],
                 created_at: '2023-01-15T10:30:00Z',
                 updated_at: '2023-04-20T14:45:00Z'
             },

@@ -7,8 +7,8 @@ import {ThemeProvider} from '@/components/ThemeProvider';
 const inter = Inter({subsets: ['latin']});
 
 export const metadata = {
-    title: 'Michel Many - Full Stack Developer',
-    description: 'Portfolio and professional profile of Michel Many, Full Stack Developer',
+    title: 'Michel Moraes - Senior Frontend & Fullstack Engineer',
+    description: 'Portfolio and professional profile of Michel Moraes, Senior Frontend & Fullstack Engineer',
 };
 
 export default function RootLayout({children}: {
@@ -16,20 +16,15 @@ export default function RootLayout({children}: {
 }) {
     return (
         <html lang="en" suppressHydrationWarning>
-        <body className={`${inter.className} antialiased`}>
-        <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-        >
-            <div className="flex flex-col min-h-screen">
-                <Header/>
-                <main className="flex-grow">{children}</main>
-                <Footer/>
-            </div>
-        </ThemeProvider>
-        </body>
+            <body className={`${inter.className} antialiased`}>
+                <ThemeProvider>
+                    <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 text-black dark:text-white">
+                        <Header/>
+                        <main className="flex-grow">{children}</main>
+                        <Footer/>
+                    </div>
+                </ThemeProvider>
+            </body>
         </html>
     );
 }

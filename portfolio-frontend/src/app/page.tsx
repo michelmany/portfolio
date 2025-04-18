@@ -39,9 +39,10 @@ export default function Home() {
                     <div className="flex flex-col items-center gap-8">
                         <div className="relative w-40 h-40 rounded-full overflow-hidden">
                             <Image
-                                src="/images/profile.jpg"
-                                alt="Michel Many"
+                                src="/images/profile-michelmany.jpeg"
+                                alt="Avatar Picture of Michel Moraes"
                                 fill
+                                sizes={'(max-width: 160px) 100vw, 160px'}
                                 style={{objectFit: 'cover'}}
                                 priority
                             />
@@ -49,10 +50,10 @@ export default function Home() {
 
                         <div>
                             <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
-                                Michel Many
+                                Michel Moraes
                             </h1>
                             <h2 className="text-2xl md:text-3xl text-teal-600 dark:text-teal-400 mb-6">
-                                Full Stack Developer
+                                Senior Frontend & Full Stack Engineer
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
                                 I build modern, responsive, and user-friendly web applications with a focus on clean

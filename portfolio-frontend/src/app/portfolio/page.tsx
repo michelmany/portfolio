@@ -26,7 +26,7 @@ export default function PortfolioPage() {
                 title: 'E-Commerce Platform',
                 slug: 'e-commerce-platform',
                 description: 'A modern e-commerce platform built with Next.js and Stripe.',
-                technologies: ['Next.js', 'Tailwind CSS', 'Stripe', 'Prisma'],
+                technologies: ['Next.js', 'Tailwind CSS', 'Prisma'],
                 images: [{url: '/images/project-1.jpg'}]
             },
             {
@@ -34,7 +34,7 @@ export default function PortfolioPage() {
                 title: 'Health & Fitness App',
                 slug: 'health-fitness-app',
                 description: 'A mobile application for tracking health and fitness goals.',
-                technologies: ['React Native', 'Firebase', 'Redux'],
+                technologies: ['React Native', 'Redux'],
                 images: [{url: '/images/project-2.jpg'}]
             },
             {
@@ -50,7 +50,7 @@ export default function PortfolioPage() {
                 title: 'Social Media Platform',
                 slug: 'social-media-platform',
                 description: 'A full-featured social media platform with real-time chat.',
-                technologies: ['React', 'Socket.io', 'Express', 'MongoDB'],
+                technologies: ['React', 'Express', 'MongoDB'],
                 images: [{url: '/images/project-4.jpg'}]
             },
             {

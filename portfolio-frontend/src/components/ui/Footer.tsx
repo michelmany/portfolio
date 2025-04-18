@@ -41,7 +41,7 @@ export default function Footer() {
 
     return (
         <footer className="border-t border-t-slate-200 bg-white dark:border-t-slate-700 dark:bg-slate-900">
-            <div className="container py-8">
+            <div className="container mx-auto py-8 px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-4 md:mb-0">
                         <p className="text-slate-600 dark:text-slate-300">

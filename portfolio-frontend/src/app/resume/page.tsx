@@ -19,7 +19,7 @@ export default function ResumePage() {
         const mockResume = {
             id: '1',
             title: 'Michel Many - Full Stack Developer Resume',
-            fileUrl: '/resume/michel-many-resume.pdf'
+            fileUrl: '/resume/michel-moraes-resume.pdf'
         };
 
         setResume(mockResume);

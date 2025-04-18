@@ -5,11 +5,12 @@ import Link from 'next/link';
 import {usePathname} from 'next/navigation';
 import {Moon, Sun, Menu, X} from 'lucide-react';
 import {useTheme} from 'next-themes';
+import Image from "next/image";
 
 export default function Header() {
     const [mounted, setMounted] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const {theme, setTheme} = useTheme();
+    const {resolvedTheme, setTheme} = useTheme();
     const pathname = usePathname();
 
     useEffect(() => {
@@ -25,13 +26,14 @@ export default function Header() {
     ];
 
     const toggleTheme = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark');
+        setTheme(resolvedTheme === 'dark' ? 'light' : 'dark');
+        console.log('Toggling theme from', resolvedTheme, 'to', resolvedTheme === 'dark' ? 'light' : 'dark');
     };
 
     if (!mounted) {
         return (
             <header className="sticky top-0 z-40 w-full border-b bg-background">
-                <div className="container flex h-16 items-center justify-between py-4">
+                <div className="container mx-auto flex h-16 items-center justify-between p-4">
                     <div className="flex items-center gap-2">
                         <Link href="/" className="flex items-center font-bold text-xl">
                             Michel Many
@@ -51,10 +53,18 @@ export default function Header() {
     return (
         <header
             className="sticky top-0 z-40 w-full border-b border-b-slate-200 bg-white dark:border-b-slate-700 dark:bg-slate-900">
-            <div className="container flex h-16 items-center justify-between py-4">
+            <div className="container mx-auto flex h-16 items-center justify-between p-4">
                 <div className="flex items-center gap-2">
                     <Link href="/" className="flex items-center font-bold text-xl text-teal-600 dark:text-teal-400">
-                        Michel Many
+                        <Image
+                            src="/images/michelmanycom-logo.png"
+                            alt="Michel Many"
+                            height={52}
+                            width={180}
+                            style={{objectFit: 'contain'}}
+                            priority
+                        />
+
                     </Link>
                 </div>
 
@@ -82,7 +92,7 @@ export default function Header() {
                         className="rounded-full p-2 hover:bg-slate-100 dark:hover:bg-slate-800"
                         aria-label="Toggle theme"
                     >
-                        {theme === 'dark' ? (
+                        {resolvedTheme === 'dark' ? (
                             <Sun className="h-5 w-5 text-yellow-500"/>
                         ) : (
                             <Moon className="h-5 w-5 text-slate-700"/>
