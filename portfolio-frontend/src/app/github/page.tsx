@@ -19,7 +19,7 @@ interface GithubRepo {
 export default function GithubPage() {
     const [repos, setRepos] = useState<GithubRepo[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+    const [error] = useState<string | null>(null);
     const [filter, setFilter] = useState('all');
 
     useEffect(() => {
