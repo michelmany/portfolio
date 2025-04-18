@@ -7,6 +7,6 @@ declare namespace Express {
             bio?: string | null;
             avatar?: string | null;
             [key: string]: any;
-        };
+        }
     }
 }

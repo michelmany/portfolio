@@ -2,9 +2,20 @@ import {Request, Response, NextFunction} from 'express';
 import jwt from 'jsonwebtoken';
 import {PrismaClient} from '@prisma/client';
 
+interface AuthenticatedRequest extends Request {
+    user?: {
+        id: string;
+        email: string;
+        name: string;
+        bio?: string | null;
+        avatar?: string | null;
+        [key: string]: any;
+    }
+}
+
 const prisma = new PrismaClient();
 
-export function authenticate(req: Request, res: Response, next: NextFunction): void {
+export function authenticate(req: AuthenticatedRequest, res: Response, next: NextFunction): void {
     try {
         const authHeader = req.headers.authorization;
 

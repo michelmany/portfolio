@@ -1,8 +1,19 @@
-import {Router, Request, Response, NextFunction} from 'express';
+import {Router, Request, Response} from 'express';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import {PrismaClient} from '@prisma/client';
 import {authenticate} from '../middleware/auth';
+
+interface AuthenticatedRequest extends Request {
+    user?: {
+        id: string;
+        email: string;
+        name: string;
+        bio?: string | null;
+        avatar?: string | null;
+        [key: string]: any;
+    }
+}
 
 const router = Router();
 const prisma = new PrismaClient();
@@ -100,7 +111,7 @@ router.post('/login', async (req: Request, res: Response) => {
 });
 
 // Get current user
-router.get('/me', authenticate, async (req: Request, res: Response) => {
+router.get('/me', authenticate, async (req: AuthenticatedRequest, res: Response) => {
     try {
         const user = await prisma.user.findUnique({
             where: {id: req.user?.id}
@@ -126,7 +137,7 @@ router.get('/me', authenticate, async (req: Request, res: Response) => {
 });
 
 // Update user profile
-router.put('/profile', authenticate, async (req: Request, res: Response) => {
+router.put('/profile', authenticate, async (req: AuthenticatedRequest, res: Response) => {
     try {
         const {name, bio} = req.body;
 
