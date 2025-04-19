@@ -17,10 +17,10 @@ import {
     SiGit,
     SiWordpress,
     SiPhp,
-    SiDocker
+    SiDocker,
+    SiVitest
 } from "react-icons/si";
 
-import { FiRepeat } from "react-icons/fi";
 import { MdPhoneIphone } from "react-icons/md";
 import { VscCode } from "react-icons/vsc";
 import { BiGridVertical } from "react-icons/bi";
@@ -72,7 +72,7 @@ export default function Home() {
         { name: "Vue.js", icon: <SiVuedotjs /> },
         { name: "GraphQL", icon: <SiGraphql /> },
         { name: "Git", icon: <SiGit /> },
-        { name: "CI/CD", icon: <FiRepeat /> },
+        { name: "Automated Testing", icon: <SiVitest /> },
         { name: "Responsive Design", icon: <MdPhoneIphone /> },
         { name: "Clean Code & Architecture", icon: <VscCode /> },
         { name: "WordPress (Enterprise)", icon: <SiWordpress /> },
@@ -197,17 +197,17 @@ export default function Home() {
                             Skills & Technologies
                         </h2>
 
-<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-  {skills.map(({ name, icon }) => (
-    <div
-      key={name}
-      className="h-24 flex flex-col items-center justify-center text-center bg-white dark:bg-slate-700 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600"
-    >
-      {icon && <div className="text-2xl mb-1 text-slate-700 dark:text-slate-300">{icon}</div>}
-      <span className="text-slate-800 dark:text-slate-200 font-medium text-sm">{name}</span>
-    </div>
-  ))}
-</div>
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                          {skills.map(({ name, icon }) => (
+                            <div
+                              key={name}
+                              className="h-24 flex flex-col items-center justify-center text-center bg-white dark:bg-slate-700 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600"
+                            >
+                              {icon && <div className="text-2xl mb-1 text-slate-700 dark:text-slate-300">{icon}</div>}
+                              <span className="text-slate-800 dark:text-slate-200 font-medium text-sm">{name}</span>
+                            </div>
+                          ))}
+                        </div>
                     </div>
                 </div>
             </section>

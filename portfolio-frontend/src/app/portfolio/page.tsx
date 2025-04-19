@@ -17,24 +17,26 @@ export default function PortfolioPage() {
     const [projects, setProjects] = useState<Project[]>([]);
     const [filter, setFilter] = useState('all');
     const [isLoading, setIsLoading] = useState(true);
+    const [visibleProjects, setVisibleProjects] = useState<Project[]>([]);
+    const [isTransitioning, setIsTransitioning] = useState(false);
 
     useEffect(() => {
         // TODO: Fetch projects from an API
         const mockProjects = [
             {
                 id: '1',
-                title: 'E-Commerce Platform',
-                slug: 'e-commerce-platform',
-                description: 'A modern e-commerce platform built with Next.js and Stripe.',
-                technologies: ['Next.js', 'Tailwind CSS', 'Prisma'],
+                title: 'NITCommerce Platform',
+                slug: 'nitcommerce-platform',
+                description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
+                technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
                 images: [{url: '/images/project-1.jpg'}]
             },
             {
                 id: '2',
-                title: 'Health & Fitness App',
-                slug: 'health-fitness-app',
-                description: 'A mobile application for tracking health and fitness goals.',
-                technologies: ['React Native', 'Redux'],
+                title: 'ICG School Services Management',
+                slug: 'icg-ssm-app',
+                description: 'A modern EMS for managing school services and resources built with Next.js and Node.js.',
+                technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
                 images: [{url: '/images/project-2.jpg'}]
             },
             {
@@ -72,16 +74,36 @@ export default function PortfolioPage() {
         ];
 
         setProjects(mockProjects);
+        setVisibleProjects(mockProjects);
         setIsLoading(false);
     }, []);
 
+    // Handle filter changes with transition
+    useEffect(() => {
+        if (isLoading) return;
+
+        const applyFilter = () => {
+            const filtered = filter === 'all'
+                ? projects
+                : projects.filter(project => project.technologies.includes(filter));
+
+            setIsTransitioning(true);
+
+            // First fade out
+            setVisibleProjects([]);
+
+            // Then fade in after a short delay
+            setTimeout(() => {
+                setVisibleProjects(filtered);
+                setIsTransitioning(false);
+            }, 200);
+        };
+
+        applyFilter();
+    }, [filter, projects, isLoading]);
+
     // Get unique technologies from all projects
     const allTechnologies = ['all', ...new Set(projects.flatMap(p => p.technologies))];
-
-    // Filter projects based on selected technology
-    const filteredProjects = filter === 'all'
-        ? projects
-        : projects.filter(project => project.technologies.includes(filter));
 
     return (
         <div className="container mx-auto px-4 py-16">
@@ -99,7 +121,7 @@ export default function PortfolioPage() {
                         <button
                             key={tech}
                             onClick={() => setFilter(tech)}
-                            className={`px-4 py-2 rounded-full text-sm transition-colors ${
+                            className={`px-4 py-2 rounded-full text-sm transition-colors cursor-pointer ${
                                 filter === tech
                                     ? 'bg-teal-600 text-white'
                                     : 'bg-slate-100 text-slate-700 hover:bg-slate-200 dark:bg-slate-700 dark:text-slate-300 dark:hover:bg-slate-600'
@@ -117,11 +139,14 @@ export default function PortfolioPage() {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredProjects.map((project) => (
+                        {visibleProjects.map((project) => (
                             <Link
                                 key={project.id}
                                 href={`/portfolio/${project.slug}`}
                                 className="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-slate-200 dark:border-slate-600"
+                                style={{
+                                    animation: 'fadeIn 0.3s ease-in-out forwards'
+                                }}
                             >
                                 <div className="relative h-48 w-full bg-slate-200 dark:bg-slate-600">
                                     <Image
@@ -154,7 +179,7 @@ export default function PortfolioPage() {
                     </div>
                 )}
 
-                {filteredProjects.length === 0 && !isLoading && (
+                {visibleProjects.length === 0 && !isLoading && !isTransitioning && (
                     <div className="text-center py-12">
                         <p className="text-lg text-slate-600 dark:text-slate-300">
                             No projects found with the selected filter.
