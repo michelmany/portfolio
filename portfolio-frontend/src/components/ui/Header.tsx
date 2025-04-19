@@ -74,7 +74,7 @@ export default function Header() {
                         <Link
                             key={link.href}
                             href={link.href}
-                            className={`transition-colors hover:text-teal-600 dark:hover:text-teal-400 ${
+                            className={`font-heading transition-colors hover:text-teal-600 dark:hover:text-teal-400 ${
                                 pathname === link.href
                                     ? 'text-teal-600 dark:text-teal-400'
                                     : 'text-slate-600 dark:text-slate-300'
@@ -123,7 +123,7 @@ export default function Header() {
                                 key={link.href}
                                 href={link.href}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className={`py-2 text-lg transition-colors hover:text-teal-600 dark:hover:text-teal-400 ${
+                                className={`font-heading py-2 text-xl transition-colors hover:text-teal-600 dark:hover:text-teal-400 ${
                                     pathname === link.href
                                         ? 'text-teal-600 dark:text-teal-400'
                                         : 'text-slate-600 dark:text-slate-300'

@@ -90,7 +90,7 @@ export default function PortfolioPage() {
                     My Portfolio
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
-                    A collection of my recent projects showcasing my skills and experience in web development.
+                    A curated selection of recent projects that highlight my expertise in frontend and fullstack development.
                 </p>
 
                 {/* Filter Tabs */}

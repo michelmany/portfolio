@@ -1,6 +1,30 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {ArrowRight, Github, Linkedin, Mail, FileText} from 'lucide-react';
+import { ReactElement } from 'react';
+
+import {
+    SiTypescript,
+    SiReact,
+    SiNextdotjs,
+    SiNodedotjs,
+    SiExpress,
+    SiPrisma,
+    SiPostgresql,
+    SiTailwindcss,
+    SiVuedotjs,
+    SiGraphql,
+    SiGit,
+    SiWordpress,
+    SiPhp,
+    SiDocker
+} from "react-icons/si";
+
+import { FiRepeat } from "react-icons/fi";
+import { MdPhoneIphone } from "react-icons/md";
+import { VscCode } from "react-icons/vsc";
+import { BiGridVertical } from "react-icons/bi";
+import { TbProgressCheck } from "react-icons/tb";
 
 export default function Home() {
     // TODO: This should be fetched from my API
@@ -31,6 +55,34 @@ export default function Home() {
         }
     ];
 
+    type SkillItem = {
+        name: string;
+        icon: ReactElement;
+    };
+
+    const skills: SkillItem[] = [
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "React.js", icon: <SiReact /> },
+        { name: "Next.js", icon: <SiNextdotjs /> },
+        { name: "Node.js", icon: <SiNodedotjs /> },
+        { name: "Express.js", icon: <SiExpress /> },
+        { name: "Prisma ORM", icon: <SiPrisma /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+        { name: "Vue.js", icon: <SiVuedotjs /> },
+        { name: "GraphQL", icon: <SiGraphql /> },
+        { name: "Git", icon: <SiGit /> },
+        { name: "CI/CD", icon: <FiRepeat /> },
+        { name: "Responsive Design", icon: <MdPhoneIphone /> },
+        { name: "Clean Code & Architecture", icon: <VscCode /> },
+        { name: "WordPress (Enterprise)", icon: <SiWordpress /> },
+        { name: "Gutenberg (React Blocks)", icon: <SiReact /> },
+        { name: "PHP (OOP)", icon: <SiPhp /> },
+        { name: "Docker", icon: <SiDocker /> },
+        { name: "Component-Based Development", icon: <BiGridVertical /> },
+        { name: "Agile Workflows", icon: <TbProgressCheck /> },
+    ];
+
     return (
         <div className="flex flex-col gap-16 py-8">
             {/* Hero Section */}
@@ -56,8 +108,13 @@ export default function Home() {
                                 Senior Frontend & Full Stack Engineer
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-                                I build modern, responsive, and user-friendly web applications with a focus on clean
-                                code and great user experiences.
+                                I build performant web applications using TypeScript and the React ecosystem, with a
+                                focus on Next.js for fullstack capabilities, maintainable components, and a great
+                                developer experience.
+                            </p>
+                            <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
+                                On the backend, I work with Node.js, Express, and Prisma ORM, delivering scalable APIs
+                                and robust data layers when needed.
                             </p>
 
                             <div className="flex flex-wrap justify-center gap-4">
@@ -65,7 +122,7 @@ export default function Home() {
                                     href="/portfolio"
                                     className="flex items-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white rounded-md transition-colors"
                                 >
-                                    <span>View Portfolio</span>
+                                    <span className="font-heading">View Portfolio</span>
                                     <ArrowRight className="h-4 w-4"/>
                                 </Link>
                                 <Link
@@ -73,7 +130,7 @@ export default function Home() {
                                     className="flex items-center gap-2 px-6 py-3 bg-slate-200 hover:bg-slate-300 text-slate-800 dark:bg-slate-700 dark:hover:bg-slate-600 dark:text-white rounded-md transition-colors"
                                 >
                                     <FileText className="h-4 w-4"/>
-                                    <span>Download Resume</span>
+                                    <span className="font-heading">Download CV</span>
                                 </Link>
                             </div>
                         </div>
@@ -110,39 +167,29 @@ export default function Home() {
                         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
                             About Me
                         </h2>
-                        <div className="prose dark:prose-invert prose-lg mx-auto">
-                            <p>
-                                I&apos;m a Full Stack Developer with over 8 years of experience building web
-                                applications and
-                                digital
-                                products.
-                                My expertise spans across the entire development stack, from designing intuitive user
-                                interfaces
-                                to
-                                implementing robust backend systems.
+                        <div className="prose dark:prose-invert prose-lg mx-auto text-center">
+                            <p className="text-lg mb-5">
+                                Hi! I’m Michel — a frontend-focused fullstack engineer with over 12 years of experience
+                                building fast, reliable, and user-friendly web applications. I spend most of my time
+                                working with TypeScript, React, and Next.js to craft clean, responsive interfaces that
+                                people enjoy using.
                             </p>
-                            <p>
-                                I specialize in modern JavaScript frameworks like React and Next.js, paired with Node.js
-                                backends
-                                and various database technologies. I&apos;m passionate about creating clean,
-                                maintainable
-                                code and
-                                delivering
-                                exceptional user experiences.
+                            <p className="mb-5 max-w-2xl mx-auto">
+                                On the backend, I’m comfortable building solid APIs and data layers with Node.js,
+                                Express, and Prisma. I care a lot about writing maintainable code, keeping things
+                                performant, and creating smooth developer experiences.
                             </p>
-                            <p>
-                                When I&apos;m not coding, you can find me exploring new technologies, contributing to
-                                open-source
-                                projects,
-                                or sharing knowledge with the developer community.
+                            <p className="max-w-2xl mx-auto">
+                                I enjoy working in remote, agile teams where collaboration, clean architecture, and
+                                thoughtful problem-solving are valued. Outside of coding, I’m always exploring new
+                                tools, experimenting with ideas, and sharing what I learn along the way.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Skills Section */
-            }
+            {/* Skills Section */}
             <section className="py-16">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
@@ -150,23 +197,22 @@ export default function Home() {
                             Skills & Technologies
                         </h2>
 
-                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {['JavaScript', 'TypeScript', 'React', 'Next.js', 'Node.js', 'Express', 'PostgreSQL', 'MongoDB',
-                                'GraphQL', 'Tailwind CSS', 'Redux', 'Docker', 'AWS', 'Git', 'CI/CD', 'Responsive Design'].map((skill) => (
-                                <div
-                                    key={skill}
-                                    className="p-4 text-center bg-white dark:bg-slate-700 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600"
-                                >
-                                    <span className="text-slate-800 dark:text-slate-200">{skill}</span>
-                                </div>
-                            ))}
-                        </div>
+<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+  {skills.map(({ name, icon }) => (
+    <div
+      key={name}
+      className="h-24 flex flex-col items-center justify-center text-center bg-white dark:bg-slate-700 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600"
+    >
+      {icon && <div className="text-2xl mb-1 text-slate-700 dark:text-slate-300">{icon}</div>}
+      <span className="text-slate-800 dark:text-slate-200 font-medium text-sm">{name}</span>
+    </div>
+  ))}
+</div>
                     </div>
                 </div>
             </section>
 
-            {/* Featured Projects Section */
-            }
+            {/* Featured Projects Section */}
             <section className="py-16 bg-slate-50 dark:bg-slate-800/50">
                 <div className="container mx-auto px-4">
                     <div className="max-w-7xl mx-auto">
@@ -234,18 +280,19 @@ export default function Home() {
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto text-center">
                         <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
-                            Let&apos;s Work Together
+                            Let’s Work Together
                         </h2>
                         <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-                            I&apos;m currently available for freelance projects, full-time positions, and consulting
-                            opportunities.
+                            I partner with teams to build high-quality web applications — from frontend to fullstack.
+                            I’m currently available for freelance work, technical consulting, or the right full-time
+                            opportunity.
                         </p>
                         <Link
                             href="/contact"
                             className="inline-flex items-center gap-2 px-8 py-4 bg-teal-600 hover:bg-teal-700 text-white rounded-md transition-colors text-lg"
                         >
                             <Mail className="h-5 w-5"/>
-                            <span>Get in Touch</span>
+                            <span className="font-heading">Let’s Talk</span>
                         </Link>
                     </div>
                 </div>

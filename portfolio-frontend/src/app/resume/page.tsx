@@ -32,8 +32,8 @@ export default function ResumePage() {
                 <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 text-center">
                     My Resume
                 </h1>
-                <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center">
-                    Download my resume to learn more about my skills, experience, and education.
+                <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-2xl mx-auto">
+                    Download my latest resume for a full overview of my experience, skills, and professional background.
                 </p>
 
                 {isLoading ? (
@@ -61,7 +61,7 @@ export default function ResumePage() {
                             rounded-md transition-colors"
                         >
                             <Download className="h-5 w-5"/>
-                            <span>Download Resume</span>
+                            <span className="font-heading">Download CV</span>
                         </a>
                     </div>
                 ) : (

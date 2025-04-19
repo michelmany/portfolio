@@ -52,8 +52,7 @@ export default function ContactPage() {
                     Contact Me
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
-                    I&apos;m available for freelance projects, full-time positions, and consulting opportunities. Let&apos;s
-                    discuss how I can help with your project.
+                    I’m open to freelance, full-time, or consulting work. Let’s connect and see how we can work together.
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -137,12 +136,12 @@ export default function ContactPage() {
                                         <>
                                             <div
                                                 className="animate-spin rounded-full h-4 w-4 border-t-2 border-b-2 border-white"></div>
-                                            <span>Sending...</span>
+                                            <span className="font-heading">Sending...</span>
                                         </>
                                     ) : (
                                         <>
                                             <Send className="h-4 w-4"/>
-                                            <span>Send Message</span>
+                                            <span className="font-heading">Send Message</span>
                                         </>
                                     )}
                                 </button>
@@ -180,10 +179,10 @@ export default function ContactPage() {
                                             Email
                                         </p>
                                         <a
-                                            href="mailto:contact@michelmany.com"
+                                            href="mailto:hellot@michelmany.com"
                                             className="text-slate-600 hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-400"
                                         >
-                                            contact@michelmany.com
+                                            hello@michelmany.com
                                         </a>
                                     </div>
                                 </div>
@@ -198,7 +197,7 @@ export default function ContactPage() {
                                             href="tel:+1234567890"
                                             className="text-slate-600 hover:text-teal-600 dark:text-slate-400 dark:hover:text-teal-400"
                                         >
-                                            +1 (234) 567-890
+                                            +34 679 119468
                                         </a>
                                     </div>
                                 </div>
@@ -210,7 +209,10 @@ export default function ContactPage() {
                                             Location
                                         </p>
                                         <p className="text-slate-600 dark:text-slate-400">
-                                            San Francisco, CA, USA
+                                            Based in Madrid, Spain<br />
+                                            Also registered in the UK<br />
+                                            Michel Many Ltd.<br />
+                                            <span className="text-xs">Registered in England and Wales No. 16058356.</span>
                                         </p>
                                     </div>
                                 </div>

@@ -12,10 +12,11 @@ module.exports = {
                 center: true,
                 padding: '1rem',
             },
-            colors: {
-                // customize your color palette here
+            fontFamily: {
+                sans: ['var(--font-inter)', 'system-ui', 'sans-serif'],
+                heading: ['var(--font-sora)', 'system-ui', 'sans-serif'],
             },
         },
     },
     plugins: [],
-};
+}

@@ -124,7 +124,7 @@ export default function GithubPage() {
                     GitHub Projects
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
-                    A selection of my open-source projects and contributions on GitHub.
+                    A collection of real-world projects and code samples that showcase my development skills, structure, and clean code practices.
                 </p>
 
                 {/* Filter by language */}
@@ -241,7 +241,7 @@ export default function GithubPage() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white rounded-md transition-colors"
                     >
-                        <span>View All Repositories</span>
+                        <span className="font-heading">View All Repositories</span>
                         <ExternalLink className="h-4 w-4"/>
                     </a>
                 </div>

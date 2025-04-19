@@ -44,7 +44,7 @@ export default function Footer() {
             <div className="container mx-auto py-8 px-4">
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     <div className="mb-4 md:mb-0">
-                        <p className="text-slate-600 dark:text-slate-300">
+                        <p className="text-slate-600 dark:text-slate-300 text-sm">
                             © {year} Michel Many. All rights reserved.
                         </p>
                     </div>
