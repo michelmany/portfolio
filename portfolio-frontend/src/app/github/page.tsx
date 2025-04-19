@@ -2,105 +2,28 @@
 
 import {useEffect, useState} from 'react';
 import {Star, GitFork, ExternalLink} from 'lucide-react';
-
-interface GithubRepo {
-    id: number;
-    name: string;
-    description: string;
-    html_url: string;
-    stargazers_count: number;
-    forks_count: number;
-    language: string;
-    topics: string[];
-    created_at: string;
-    updated_at: string;
-}
+import {GithubRepo, fetchPinnedRepos} from '@/lib/github';
 
 export default function GithubPage() {
     const [repos, setRepos] = useState<GithubRepo[]>([]);
     const [isLoading, setIsLoading] = useState(true);
-    const [error] = useState<string | null>(null);
+    const [error, setError] = useState<string | null>(null);
     const [filter, setFilter] = useState('all');
 
     useEffect(() => {
-        // TODO: Fetch repos from GitHub API
-        const mockRepos = [
-            {
-                id: 1,
-                name: 'portfolio',
-                description: 'This is my portfolio. Backend: nodejs, typescript, express and prisma. Frontend: nextjs, typescript, tailwind css, react hooks & context api, axios for api integration and responsive design with mobile-first approach',
-                html_url: 'https://github.com/michelmany/portfolio',
-                stargazers_count: 1,
-                forks_count: 0,
-                language: 'TypeScript',
-                topics: ['nextjs', 'tailwindcss', 'nodejs', 'react', 'typescript', 'express', 'prisma'],
-                created_at: '2023-01-15T10:30:00Z',
-                updated_at: '2023-04-20T14:45:00Z'
-            },
-            {
-                id: 2,
-                name: 'e-commerce-platform',
-                description: 'A full-featured e-commerce platform with Stripe integration',
-                html_url: 'https://github.com/michelmany/e-commerce-platform',
-                stargazers_count: 32,
-                forks_count: 12,
-                language: 'JavaScript',
-                topics: ['ecommerce', 'nextjs', 'stripe', 'react'],
-                created_at: '2022-07-08T09:15:00Z',
-                updated_at: '2023-03-12T18:30:00Z'
-            },
-            {
-                id: 3,
-                name: 'task-management-app',
-                description: 'A task management application with team collaboration features',
-                html_url: 'https://github.com/michelmany/task-management-app',
-                stargazers_count: 24,
-                forks_count: 8,
-                language: 'TypeScript',
-                topics: ['vue', 'node', 'mongodb', 'task-management'],
-                created_at: '2022-03-22T15:45:00Z',
-                updated_at: '2023-01-05T11:20:00Z'
-            },
-            {
-                id: 4,
-                name: 'content-management-system',
-                description: 'Custom CMS with headless architecture',
-                html_url: 'https://github.com/michelmany/content-management-system',
-                stargazers_count: 18,
-                forks_count: 6,
-                language: 'TypeScript',
-                topics: ['cms', 'nextjs', 'graphql', 'prisma'],
-                created_at: '2022-09-10T08:00:00Z',
-                updated_at: '2023-02-28T16:30:00Z'
-            },
-            {
-                id: 5,
-                name: 'finance-dashboard',
-                description: 'Interactive dashboard for visualizing financial data',
-                html_url: 'https://github.com/michelmany/finance-dashboard',
-                stargazers_count: 27,
-                forks_count: 9,
-                language: 'JavaScript',
-                topics: ['react', 'd3js', 'dashboard', 'finance'],
-                created_at: '2022-05-15T12:30:00Z',
-                updated_at: '2023-03-05T09:45:00Z'
-            },
-            {
-                id: 6,
-                name: 'health-fitness-app',
-                description: 'Mobile app for tracking health and fitness goals',
-                html_url: 'https://github.com/michelmany/health-fitness-app',
-                stargazers_count: 21,
-                forks_count: 7,
-                language: 'JavaScript',
-                topics: ['react-native', 'fitness', 'mobile', 'firebase'],
-                created_at: '2022-11-08T14:20:00Z',
-                updated_at: '2023-04-10T10:15:00Z'
+        const getRepos = async () => {
+            setIsLoading(true);
+            try {
+                const pinnedRepos = await fetchPinnedRepos();
+                setRepos(pinnedRepos);
+            } catch (err) {
+                setError(err instanceof Error ? err.message : 'An error occurred fetching repositories');
+            } finally {
+                setIsLoading(false);
             }
-        ];
+        };
 
-        setRepos(mockRepos);
-        setIsLoading(false);
+        getRepos();
     }, []);
 
     // Get all languages from repos
@@ -111,7 +34,6 @@ export default function GithubPage() {
         ? repos
         : repos.filter(repo => repo.language === filter);
 
-    // Format date
     const formatDate = (dateString: string) => {
         const options: Intl.DateTimeFormatOptions = {year: 'numeric', month: 'short', day: 'numeric'};
         return new Date(dateString).toLocaleDateString(undefined, options);
@@ -124,7 +46,8 @@ export default function GithubPage() {
                     GitHub Projects
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
-                    A collection of real-world projects and code samples that showcase my development skills, structure, and clean code practices.
+                    A collection of real-world projects and code samples that showcase my development skills, structure,
+                    and clean code practices.
                 </p>
 
                 {/* Filter by language */}
