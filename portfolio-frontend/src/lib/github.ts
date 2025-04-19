@@ -11,6 +11,29 @@ export interface GithubRepo {
     updated_at: string;
 }
 
+interface RepositoryNode {
+    id: number;
+    name: string;
+    description: string | null;
+    url: string;
+    stargazerCount: number;
+    forkCount: number;
+    primaryLanguage: {
+        name: string;
+    } | null;
+    repositoryTopics: {
+        nodes: TopicNode[];
+    };
+    createdAt: string;
+    updatedAt: string;
+}
+
+interface TopicNode {
+    topic: {
+        name: string;
+    }
+}
+
 export async function fetchPinnedRepos(): Promise<GithubRepo[]> {
     const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
 
@@ -59,7 +82,7 @@ export async function fetchPinnedRepos(): Promise<GithubRepo[]> {
     const data = await response.json();
 
     // Transform GraphQL response to match our interface
-    return data.data.user.pinnedItems.nodes.map((repo: any): GithubRepo => ({
+    return data.data.user.pinnedItems.nodes.map((repo: RepositoryNode): GithubRepo => ({
         id: repo.id,
         name: repo.name,
         description: repo.description || 'No description available',
@@ -67,7 +90,7 @@ export async function fetchPinnedRepos(): Promise<GithubRepo[]> {
         stargazers_count: repo.stargazerCount,
         forks_count: repo.forkCount,
         language: repo.primaryLanguage?.name || 'Unknown',
-        topics: repo.repositoryTopics.nodes.map((topic: any) => topic.topic.name),
+        topics: repo.repositoryTopics.nodes.map((topic: TopicNode) => topic.topic.name),
         created_at: repo.createdAt,
         updated_at: repo.updatedAt
     }));
