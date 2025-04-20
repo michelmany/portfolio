@@ -2,7 +2,8 @@ import {Inter, Sora} from 'next/font/google';
 import './globals.css';
 import Header from '@/components/ui/Header';
 import Footer from '@/components/ui/Footer';
-import {ThemeProvider} from '@/components/ThemeProvider';
+// import {ThemeProvider} from '@/components/ThemeProvider';
+import { ThemeProvider } from 'next-themes';
 
 const inter = Inter({
     subsets: ['latin'],
@@ -27,7 +28,7 @@ export default function RootLayout({children}: {
     return (
         <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sora.variable}`}>
             <body className={`${inter.className} antialiased`}>
-                <ThemeProvider>
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
                     <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 text-black dark:text-white">
                         <Header/>
                         <main className="flex-grow">{children}</main>

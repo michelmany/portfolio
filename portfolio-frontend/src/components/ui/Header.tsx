@@ -56,15 +56,25 @@ export default function Header() {
             <div className="container mx-auto flex h-16 items-center justify-between p-4">
                 <div className="flex items-center gap-2">
                     <Link href="/" className="flex items-center font-bold text-xl text-teal-600 dark:text-teal-400">
-                        <Image
-                            src="/images/michelmanycom-logo.png"
-                            alt="Michel Many"
-                            height={52}
-                            width={180}
-                            style={{objectFit: 'contain'}}
-                            priority
-                        />
-
+                        {resolvedTheme === 'dark' ? (
+                            <Image
+                                src="/images/michelmanycom-logo-light.png"
+                                alt="Michel Many"
+                                height={52}
+                                width={180}
+                                style={{objectFit: 'contain'}}
+                                priority
+                            />
+                        ) : (
+                            <Image
+                                src="/images/michelmanycom-logo-dark.png"
+                                alt="Michel Many"
+                                height={52}
+                                width={180}
+                                style={{objectFit: 'contain'}}
+                                priority
+                            />
+                        )}
                     </Link>
                 </div>
 

@@ -1,29 +1,31 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-sora);
-  letter-spacing: -1.2px;
+    font-family: var(--font-sora);
+    letter-spacing: -1.2px;
 }
 
 body {
-  font-family: var(--font-inter);
+    font-family: var(--font-inter);
 }
 
 .font-heading {
-  font-family: var(--font-sora);
+    font-family: var(--font-sora);
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .animate-fadeIn {
-  animation: fadeIn 0.3s ease-in-out forwards;
+    animation: fadeIn 0.3s ease-in-out forwards;
 }

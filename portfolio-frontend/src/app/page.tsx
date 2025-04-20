@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import {ArrowRight, Github, Linkedin, Mail, FileText} from 'lucide-react';
-import { ReactElement } from 'react';
+import {ReactElement} from 'react';
 
 import {
     SiTypescript,
@@ -21,37 +21,37 @@ import {
     SiVitest
 } from "react-icons/si";
 
-import { MdPhoneIphone } from "react-icons/md";
-import { VscCode } from "react-icons/vsc";
-import { BiGridVertical } from "react-icons/bi";
-import { TbProgressCheck } from "react-icons/tb";
+import {MdPhoneIphone} from "react-icons/md";
+import {VscCode} from "react-icons/vsc";
+import {BiGridVertical} from "react-icons/bi";
+import {TbProgressCheck} from "react-icons/tb";
 
 export default function Home() {
     // TODO: This should be fetched from my API
     const featuredProjects = [
         {
             id: '1',
-            title: 'E-Commerce Platform',
-            slug: 'e-commerce-platform',
-            description: 'A modern e-commerce platform built with Next.js and Stripe.',
-            technologies: ['Next.js', 'Tailwind CSS', 'Stripe', 'Prisma'],
-            images: [{url: '/images/project-1.jpg'}]
+            title: 'NITCommerce Platform',
+            slug: 'nitcommerce-platform',
+            description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
+            technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
+            images: [{url: '/images/michelmany-project-nitcommerce.png'}]
         },
         {
             id: '2',
-            title: 'Health & Fitness App',
-            slug: 'health-fitness-app',
-            description: 'A mobile application for tracking health and fitness goals.',
-            technologies: ['React Native', 'Firebase', 'Redux'],
-            images: [{url: '/images/project-2.jpg'}]
+            title: 'ICG School Services Management',
+            slug: 'icg-ssm-app',
+            description: 'A modern EMS for managing school services and resources built with Next.js and Node.js.',
+            technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
+            images: [{url: '/images/michelmany-icg-ssm.png'}]
         },
         {
             id: '3',
-            title: 'Financial Dashboard',
-            slug: 'financial-dashboard',
-            description: 'Interactive dashboard for visualizing financial data.',
-            technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-            images: [{url: '/images/project-3.jpg'}]
+            title: 'Portfolio Project',
+            slug: 'michel-many-portfolio',
+            description: 'This is my portfolio website built with Next.js and Node.js.',
+            technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
+            images: [{url: '/images/michelmany-project-portfolio-website.png'}]
         }
     ];
 
@@ -61,26 +61,26 @@ export default function Home() {
     };
 
     const skills: SkillItem[] = [
-        { name: "TypeScript", icon: <SiTypescript /> },
-        { name: "React.js", icon: <SiReact /> },
-        { name: "Next.js", icon: <SiNextdotjs /> },
-        { name: "Node.js", icon: <SiNodedotjs /> },
-        { name: "Express.js", icon: <SiExpress /> },
-        { name: "Prisma ORM", icon: <SiPrisma /> },
-        { name: "PostgreSQL", icon: <SiPostgresql /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-        { name: "Vue.js", icon: <SiVuedotjs /> },
-        { name: "GraphQL", icon: <SiGraphql /> },
-        { name: "Git", icon: <SiGit /> },
-        { name: "Automated Testing", icon: <SiVitest /> },
-        { name: "Responsive Design", icon: <MdPhoneIphone /> },
-        { name: "Clean Code & Architecture", icon: <VscCode /> },
-        { name: "WordPress (Enterprise)", icon: <SiWordpress /> },
-        { name: "Gutenberg (React Blocks)", icon: <SiReact /> },
-        { name: "PHP (OOP)", icon: <SiPhp /> },
-        { name: "Docker", icon: <SiDocker /> },
-        { name: "Component-Based Development", icon: <BiGridVertical /> },
-        { name: "Agile Workflows", icon: <TbProgressCheck /> },
+        {name: "TypeScript", icon: <SiTypescript/>},
+        {name: "React.js", icon: <SiReact/>},
+        {name: "Next.js", icon: <SiNextdotjs/>},
+        {name: "Node.js", icon: <SiNodedotjs/>},
+        {name: "Express.js", icon: <SiExpress/>},
+        {name: "Prisma ORM", icon: <SiPrisma/>},
+        {name: "PostgreSQL", icon: <SiPostgresql/>},
+        {name: "Tailwind CSS", icon: <SiTailwindcss/>},
+        {name: "Vue.js", icon: <SiVuedotjs/>},
+        {name: "GraphQL", icon: <SiGraphql/>},
+        {name: "Git", icon: <SiGit/>},
+        {name: "Automated Testing", icon: <SiVitest/>},
+        {name: "Responsive Design", icon: <MdPhoneIphone/>},
+        {name: "Clean Code & Architecture", icon: <VscCode/>},
+        {name: "WordPress (Enterprise)", icon: <SiWordpress/>},
+        {name: "Gutenberg (React Blocks)", icon: <SiReact/>},
+        {name: "PHP (OOP)", icon: <SiPhp/>},
+        {name: "Docker", icon: <SiDocker/>},
+        {name: "Component-Based Development", icon: <BiGridVertical/>},
+        {name: "Agile Workflows", icon: <TbProgressCheck/>},
     ];
 
     return (
@@ -198,15 +198,17 @@ export default function Home() {
                         </h2>
 
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                          {skills.map(({ name, icon }) => (
-                            <div
-                              key={name}
-                              className="h-24 flex flex-col items-center justify-center text-center bg-white dark:bg-slate-700 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600"
-                            >
-                              {icon && <div className="text-2xl mb-1 text-slate-700 dark:text-slate-300">{icon}</div>}
-                              <span className="text-slate-800 dark:text-slate-200 font-medium text-sm">{name}</span>
-                            </div>
-                          ))}
+                            {skills.map(({name, icon}) => (
+                                <div
+                                    key={name}
+                                    className="h-24 flex flex-col items-center justify-center text-center bg-white dark:bg-slate-700 rounded-lg shadow-sm border border-slate-200 dark:border-slate-600"
+                                >
+                                    {icon &&
+                                        <div className="text-2xl mb-1 text-slate-700 dark:text-slate-300">{icon}</div>}
+                                    <span
+                                        className="text-slate-800 dark:text-slate-200 font-medium text-sm">{name}</span>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -236,7 +238,7 @@ export default function Home() {
                                     href={`/portfolio/${project.slug}`}
                                     className="group bg-white dark:bg-slate-700 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow border border-slate-200 dark:border-slate-600"
                                 >
-                                    <div className="relative h-48 w-full bg-slate-200 dark:bg-slate-600">
+                                    <div className="relative h-[250px] w-full bg-slate-200 dark:bg-slate-600">
                                         <Image
                                             src={project.images[0]?.url || '/images/placeholder.jpg'}
                                             alt={project.title}
@@ -252,7 +254,7 @@ export default function Home() {
                                             {project.description}
                                         </p>
                                         <div className="flex flex-wrap gap-2">
-                                            {project.technologies.slice(0, 3).map((tech) => (
+                                            {project.technologies.slice(0, 4).map((tech) => (
                                                 <span
                                                     key={tech}
                                                     className="px-3 py-1 text-xs bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-full"
@@ -260,10 +262,10 @@ export default function Home() {
                                                   {tech}
                                                 </span>
                                             ))}
-                                            {project.technologies.length > 3 && (
+                                            {project.technologies.length > 4 && (
                                                 <span
                                                     className="px-3 py-1 text-xs bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-full">
-                                                  +{project.technologies.length - 3}
+                                                  +{project.technologies.length - 4}
                                                 </span>
                                             )}
                                         </div>

@@ -28,48 +28,32 @@ export default function PortfolioPage() {
                 title: 'NITCommerce Platform',
                 slug: 'nitcommerce-platform',
                 description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
-                technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-                images: [{url: '/images/project-1.jpg'}]
+                technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
+                images: [{url: '/images/michelmany-project-nitcommerce.png'}]
             },
             {
                 id: '2',
                 title: 'ICG School Services Management',
                 slug: 'icg-ssm-app',
                 description: 'A modern EMS for managing school services and resources built with Next.js and Node.js.',
-                technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-                images: [{url: '/images/project-2.jpg'}]
+                technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
+                images: [{url: '/images/michelmany-icg-ssm.png'}]
             },
             {
                 id: '3',
-                title: 'Financial Dashboard',
-                slug: 'financial-dashboard',
-                description: 'Interactive dashboard for visualizing financial data.',
-                technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-                images: [{url: '/images/project-3.jpg'}]
+                title: 'Portfolio Project',
+                slug: 'michel-many-portfolio',
+                description: 'This is my portfolio website built with Next.js and Node.js.',
+                technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
+                images: [{url: '/images/michelmany-project-portfolio-website.png'}]
             },
             {
                 id: '4',
-                title: 'Social Media Platform',
-                slug: 'social-media-platform',
-                description: 'A full-featured social media platform with real-time chat.',
-                technologies: ['React', 'Express', 'MongoDB'],
-                images: [{url: '/images/project-4.jpg'}]
-            },
-            {
-                id: '5',
-                title: 'Content Management System',
-                slug: 'content-management-system',
-                description: 'Custom CMS for digital content with advanced editor capabilities.',
-                technologies: ['Next.js', 'GraphQL', 'PostgreSQL', 'Tailwind CSS'],
-                images: [{url: '/images/project-5.jpg'}]
-            },
-            {
-                id: '6',
-                title: 'Task Management App',
-                slug: 'task-management-app',
-                description: 'Productivity app for managing tasks, projects, and team collaboration.',
-                technologies: ['Vue.js', 'Vuex', 'Node.js', 'MongoDB'],
-                images: [{url: '/images/project-6.jpg'}]
+                title: 'Gutenberg React Blocks',
+                slug: 'gutenberg-react-blocks',
+                description: 'Interactive custom WP gutenberg blocks built with React.js.',
+                technologies: ['TypeScript', 'Gutenberg', 'React'],
+                images: [{url: '/images/michelmany-gutenberg-blocks.png'}]
             }
         ];
 
@@ -148,7 +132,7 @@ export default function PortfolioPage() {
                                     animation: 'fadeIn 0.3s ease-in-out forwards'
                                 }}
                             >
-                                <div className="relative h-48 w-full bg-slate-200 dark:bg-slate-600">
+                                <div className="relative h-[250px] w-full bg-slate-200 dark:bg-slate-600">
                                     <Image
                                         src={project.images[0]?.url || '/images/placeholder.jpg'}
                                         alt={project.title}
