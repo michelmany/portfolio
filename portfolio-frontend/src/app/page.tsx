@@ -129,13 +129,10 @@ export default function Home() {
                                 Senior Frontend & Full Stack Engineer
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-                                I build performant web applications using TypeScript and the React ecosystem, with a
-                                focus on Next.js for fullstack capabilities, maintainable components, and a great
-                                developer experience.
+                                I build performant, scalable web applications using <strong>TypeScript, React, and Next.js</strong> — with a focus on maintainable architecture, reusability, and developer experience.
                             </p>
                             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-                                On the backend, I work with Node.js, Express, and Prisma ORM, delivering scalable APIs
-                                and robust data layers when needed.
+                                On the backend, I work with <strong>Node.js, Express, and Prisma ORM</strong>, designing robust APIs and data layers when fullstack capabilities are needed.
                             </p>
 
                             <div className="flex flex-wrap justify-center gap-4">
@@ -190,20 +187,13 @@ export default function Home() {
                         </h2>
                         <div className="prose dark:prose-invert prose-lg mx-auto text-center">
                             <p className="text-lg mb-5">
-                                Hi! I’m Michel — a frontend-focused fullstack engineer with over 12 years of experience
-                                building fast, reliable, and user-friendly web applications. I spend most of my time
-                                working with TypeScript, React, and Next.js to craft clean, responsive interfaces that
-                                people enjoy using.
+                                I’m Michel — a frontend-focused fullstack engineer with <strong>12+</strong> years of experience delivering fast, reliable, and scalable web applications. I specialize in building clean, accessible UIs using <strong>React, Next.js, and TypeScript</strong>.
                             </p>
                             <p className="mb-5 max-w-2xl mx-auto">
-                                On the backend, I’m comfortable building solid APIs and data layers with Node.js,
-                                Express, and Prisma. I care a lot about writing maintainable code, keeping things
-                                performant, and creating smooth developer experiences.
+                                On the backend, I’m experienced with <strong>Node.js, Express</strong>, and <strong>Prisma</strong>, building robust APIs and working across the full data lifecycle when needed. I prioritize maintainable code, performance, and long-term scalability.
                             </p>
                             <p className="max-w-2xl mx-auto">
-                                I enjoy working in remote, agile teams where collaboration, clean architecture, and
-                                thoughtful problem-solving are valued. Outside of coding, I’m always exploring new
-                                tools, experimenting with ideas, and sharing what I learn along the way.
+                                I thrive in remote, agile teams that value clean architecture, thoughtful engineering, and collaboration. Outside of coding, I enjoy experimenting with new tools and sharing what I learn with others.
                             </p>
                         </div>
                     </div>
@@ -306,9 +296,7 @@ export default function Home() {
                             Let’s Work Together
                         </h2>
                         <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">
-                            I partner with teams to build high-quality web applications — from frontend to fullstack.
-                            I’m currently available for freelance work, technical consulting, or the right full-time
-                            opportunity.
+                            I collaborate with product teams to build high-quality web applications — from frontend interfaces to fullstack architectures. I’m currently available for <strong>freelance work, technical consulting</strong>, or the right <strong>full-time opportunity</strong>.
                         </p>
                         <Link
                             href="/contact"

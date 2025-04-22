@@ -52,7 +52,7 @@ export default function ContactPage() {
                     Contact Me
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
-                    I’m open to freelance, full-time, or consulting work. Let’s connect and see how we can work together.
+                    Let’s connect — I’m open to freelance, consulting, or full-time roles. Always interested in building smart, scalable solutions together.
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
