@@ -41,31 +41,31 @@ export default function ProjectPage() {
                 description:
                     'Fullstack e-commerce platform with a clean architecture, built using Next.js, Node.js, Prisma, and Stripe for seamless shopping and admin control.',
                 content: `
-    <p>NITCommerce is a fullstack e-commerce platform designed to deliver a high-performance shopping experience for end-users, and a simple, scalable management interface for store admins.</p>
-
-    <h3>Project Overview</h3>
-    <p>The goal was to build a custom e-commerce solution from scratch — with responsive UI, secure payments, dynamic product filtering, and an admin dashboard. The stack chosen ensured flexibility, developer experience, and performance from day one.</p>
-
-    <h3>Technical Implementation</h3>
-    <p>The frontend was built with <strong>Next.js</strong> and <strong>Tailwind CSS</strong>, using a mobile-first approach and optimized image delivery via lazy loading. The backend is powered by <strong>Node.js</strong> and <strong>Express.js</strong>, with <strong>Prisma ORM</strong> handling database operations over a PostgreSQL instance.</p>
-
-    <p><strong>Key features:</strong></p>
-    <ul>
-      <li>Responsive product catalog with SSR + advanced filtering</li>
-      <li>JWT-based user authentication and authorization</li>
-      <li>Shopping cart with localStorage + sync fallback</li>
-      <li>Stripe Checkout integration with real-time order tracking</li>
-      <li>Admin dashboard with product and order management</li>
-      <li>Optimized images, lazy loading, and accessibility improvements</li>
-      <li>Unit tests and coverage using <strong>Vitest</strong></li>
-    </ul>
-
-    <h3>Challenges & Solutions</h3>
-    <p>Handling performance at scale was a key challenge — especially with large datasets in the product catalog. This was addressed using dynamic loading, efficient pagination with Prisma, and SSR/ISR hybrid rendering in Next.js to minimize load times.</p>
-
-    <h3>Results</h3>
-    <p>The final platform delivered a 35% increase in conversion rate compared to the client's legacy solution. Performance metrics improved significantly, with a 25% decrease in page load times and higher retention in cart-to-checkout flows.</p>
-  `,
+                <p>NITCommerce is a fullstack e-commerce platform designed to deliver a high-performance shopping experience for end-users, and a simple, scalable management interface for store admins.</p>
+            
+                <h3>Project Overview</h3>
+                <p>The goal was to build a custom e-commerce solution from scratch — with responsive UI, secure payments, dynamic product filtering, and an admin dashboard. The stack chosen ensured flexibility, developer experience, and performance from day one.</p>
+            
+                <h3>Technical Implementation</h3>
+                <p>The frontend was built with <strong>Next.js</strong> and <strong>Tailwind CSS</strong>, using a mobile-first approach and optimized image delivery via lazy loading. The backend is powered by <strong>Node.js</strong> and <strong>Express.js</strong>, with <strong>Prisma ORM</strong> handling database operations over a PostgreSQL instance.</p>
+            
+                <p><strong>Key features:</strong></p>
+                <ul>
+                  <li>Responsive product catalog with SSR + advanced filtering</li>
+                  <li>JWT-based user authentication and authorization</li>
+                  <li>Shopping cart with localStorage + sync fallback</li>
+                  <li>Stripe Checkout integration with real-time order tracking</li>
+                  <li>Admin dashboard with product and order management</li>
+                  <li>Optimized images, lazy loading, and accessibility improvements</li>
+                  <li>Unit tests and coverage using <strong>Vitest</strong></li>
+                </ul>
+            
+                <h3>Challenges & Solutions</h3>
+                <p>Handling performance at scale was a key challenge — especially with large datasets in the product catalog. This was addressed using dynamic loading, efficient pagination with Prisma, and SSR/ISR hybrid rendering in Next.js to minimize load times.</p>
+            
+                <h3>Results</h3>
+                <p>The final platform delivered a 35% increase in conversion rate compared to the client's legacy solution. Performance metrics improved significantly, with a 25% decrease in page load times and higher retention in cart-to-checkout flows.</p>
+              `,
                 technologies: [
                     'TypeScript',
                     'Next.js',
@@ -85,26 +85,26 @@ export default function ProjectPage() {
                         url: '/images/michelmany-project-nitcommerce.png',
                         caption: 'Homepage with featured product highlights and hero CTA'
                     },
-                    {
-                        id: '2',
-                        url: '/images/project-1-detail.jpg',
-                        caption: 'Product detail page with variants and quantity selection'
-                    },
-                    {
-                        id: '3',
-                        url: '/images/project-1-cart.jpg',
-                        caption: 'Shopping cart with real-time sync and quantity updates'
-                    },
-                    {
-                        id: '4',
-                        url: '/images/project-1-checkout.jpg',
-                        caption: 'Secure Stripe-powered checkout flow'
-                    },
-                    {
-                        id: '5',
-                        url: '/images/project-1-admin.jpg',
-                        caption: 'Admin dashboard with product CRUD and order management'
-                    }
+                    // {
+                    //     id: '2',
+                    //     url: '/images/project-1-detail.jpg',
+                    //     caption: 'Product detail page with variants and quantity selection'
+                    // },
+                    // {
+                    //     id: '3',
+                    //     url: '/images/project-1-cart.jpg',
+                    //     caption: 'Shopping cart with real-time sync and quantity updates'
+                    // },
+                    // {
+                    //     id: '4',
+                    //     url: '/images/project-1-checkout.jpg',
+                    //     caption: 'Secure Stripe-powered checkout flow'
+                    // },
+                    // {
+                    //     id: '5',
+                    //     url: '/images/project-1-admin.jpg',
+                    //     caption: 'Admin dashboard with product CRUD and order management'
+                    // }
                 ]
             },
             {
@@ -121,7 +121,8 @@ export default function ProjectPage() {
                     "Prisma",
                     "PostgreSQL",
                     "Tailwind CSS"
-                ]
+                ],
+                githubUrl: 'https://github.com/michelmany/icg-ssm-app',
             },
             {
                 "id": "3",
@@ -132,8 +133,13 @@ export default function ProjectPage() {
                 "technologies": [
                     "TypeScript",
                     "Next.js",
+                    "Node.js",
+                    "Express.js",
+                    "Prisma",
+                    "PostgreSQL",
                     "Tailwind CSS"
-                ]
+                ],
+                githubUrl: 'https://github.com/michelmany/portfolio',
             },
             {
                 "id": "4",
@@ -147,7 +153,46 @@ export default function ProjectPage() {
                     "WordPress",
                     "Gutenberg",
                     "Tailwind CSS"
-                ]
+                ],
+                githubUrl: 'https://github.com/michelmany/gutenberg-react-blocks',
+            },
+            {
+              "id": "5",
+              "title": "Bricks Builder Editor",
+              "slug": "bricks-builder-editor",
+              "description": "Frontend development of the visual editor for Bricks — a community-driven site builder for WordPress built with Vue.js.",
+              "technologies": [
+                "JavaScript",
+                "Vue.js",
+                "Vuex",
+                "SCSS",
+                "WordPress"
+              ],
+              "content": "\n<p>Bricks is a fast, community-driven visual site builder for WordPress. I joined the core team during its early development phase to help implement key frontend features for the in-browser editor.</p>\n\n<h3>Project Overview</h3>\n<p>The goal of Bricks is to empower WordPress users to build highly performant, scalable websites without touching code. My role focused on designing and implementing the core visual editor — with intuitive drag-and-drop, style control, and real-time updates.</p>\n\n<h3>Technical Implementation</h3>\n<p>The application was built using <strong>Vue.js</strong> and <strong>Vuex</strong> for state management. I worked on complex UI interactions, like real-time margin/padding adjustment via draggable handles, and a live preview environment fully synced with the control panel. I also implemented many of the 100+ customizable UI elements available in the builder.</p>\n\n<ul>\n  <li>Drag-and-drop editing with real-time layout updates</li>\n  <li>Custom margin, padding, and alignment controls via mouse-driven UI</li>\n  <li>Advanced typography tools including Google Fonts, Adobe Fonts, and custom uploads</li>\n  <li>Icon integration with libraries like Font Awesome and Ionicons</li>\n  <li>Performance-optimized frontend with scoped SCSS and modular components</li>\n</ul>\n\n<h3>Challenges & Solutions</h3>\n<p>Translating user gestures (drag, resize) into precise layout CSS was a major technical challenge. I built a flexible, state-driven system using Vuex to update style properties in real time without conflicts or performance drops.</p>\n\n<h3>Results</h3>\n<p>The visual editor became the heart of Bricks Builder, enabling thousands of users to build advanced, code-free websites. The builder has since grown into a well-loved product with an active community and commercial success.</p>\n",
+              "websiteUrl": "https://bricksbuilder.io/",
+              "githubUrl": "",
+              "images": [
+                {
+                  "id": "1",
+                  "url": "/images/michelmany-project-bricks-builder.png",
+                  "caption": "Bricks Builder's visual editor in action"
+                },
+                // {
+                //   "id": "2",
+                //   "url": "/images/michelmany-bricksbuilder-drag.jpg",
+                //   "caption": "Custom margin and padding control via draggable UI"
+                // },
+                // {
+                //   "id": "3",
+                //   "url": "/images/michelmany-bricksbuilder-elements.jpg",
+                //   "caption": "Library of over 100+ customizable design elements"
+                // },
+                // {
+                //   "id": "4",
+                //   "url": "/images/michelmany-bricksbuilder-typography.jpg",
+                //   "caption": "Advanced typography controls with font library integration"
+                // }
+              ]
             }
         ];
 

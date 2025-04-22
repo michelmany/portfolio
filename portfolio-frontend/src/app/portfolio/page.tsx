@@ -54,6 +54,14 @@ export default function PortfolioPage() {
                 description: 'Interactive Gutenberg blocks built with React and TypeScript for WordPress-based platforms. Accessible, modular, and reusable.',
                 technologies: ['TypeScript', 'Gutenberg', 'React'],
                 images: [{ url: '/images/michelmany-gutenberg-blocks.png' }]
+            },
+            {
+                id: '5',
+                title: 'Bricks Builder Editor',
+                slug: 'bricks-builder-editor',
+                description: 'Frontend development of the visual editor for Bricks — a community-driven site builder for WordPress built with Vue.js.',
+                technologies: ['JavaScript', 'Vue.js', 'Vuex', 'SCSS', 'WordPress'],
+                images: [{ url: '/images/michelmany-project-bricks-builder.png' }]
             }
         ];
 
