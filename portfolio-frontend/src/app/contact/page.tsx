@@ -25,8 +25,19 @@ export default function ContactPage() {
         setSubmitError(null);
 
         try {
-            // TODO: Replace with actual API call
-            await new Promise(resolve => setTimeout(resolve, 1500));
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                throw new Error(data.message || 'Something went wrong');
+            }
 
             // Reset form
             setFormData({
@@ -39,7 +50,7 @@ export default function ContactPage() {
             setSubmitSuccess(true);
             setTimeout(() => setSubmitSuccess(false), 5000);
         } catch (error) {
-            setSubmitError(error + ': There was an error sending your message. Please try again.');
+            setSubmitError(error instanceof Error ? error.message : 'Failed to send your message. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -52,7 +63,7 @@ export default function ContactPage() {
                     Contact Me
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
-                    Let’s connect — I’m open to freelance, consulting, or full-time roles. Always interested in building smart, scalable solutions together.
+                    Let's connect — I'm open to freelance, consulting, or full-time roles. Always interested in building smart, scalable solutions together.
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
