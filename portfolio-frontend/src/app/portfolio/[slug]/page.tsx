@@ -32,59 +32,133 @@ export default function ProjectPage() {
 
     useEffect(() => {
         // TODO: Fetch project data from an API
-        const mockProject = {
-            id: '1',
-            title: 'E-Commerce Platform',
-            slug: 'e-commerce-platform',
-            description: 'A modern e-commerce platform built with Next.js and Stripe.',
-            content: `
-        <p>This e-commerce platform provides a seamless shopping experience for customers and an intuitive management interface for store owners.</p>
-        
-        <h3>Project Overview</h3>
-        <p>The primary goal was to create a fast, responsive, and user-friendly e-commerce solution that could handle products, categories, shopping carts, and secure payments.</p>
-        
-        <h3>Technical Details</h3>
-        <p>The front-end is built with Next.js and Tailwind CSS, focusing on performance and responsive design. The back-end uses Node.js with Express for the API, and Prisma as the ORM for database operations.</p>
-        
-        <p>Key features include:</p>
-        <ul>
-          <li>Responsive product catalog with advanced filtering</li>
-          <li>User authentication and authorization</li>
-          <li>Shopping cart with localStorage persistence</li>
-          <li>Secure checkout process with Stripe integration</li>
-          <li>Admin dashboard for product and order management</li>
-          <li>Optimized images and lazy loading for performance</li>
-        </ul>
-        
-        <h3>Challenges and Solutions</h3>
-        <p>One of the main challenges was optimizing the performance of the product catalog with a large number of items. This was solved by implementing efficient pagination, image optimization, and selective loading of product details.</p>
-        
-        <h3>Outcome</h3>
-        <p>The platform resulted in a 35% increase in conversion rate compared to the client's previous solution, with a 25% decrease in page load times and improved user engagement metrics.</p>
-      `,
-            technologies: ['Next.js', 'Tailwind CSS', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Stripe', 'Redux'],
-            websiteUrl: 'https://example-ecommerce.com',
-            githubUrl: 'https://github.com/michelmany/ecommerce-platform',
-            images: [
-                {id: '1', url: '/images/project-1.jpg', caption: 'Homepage design showcasing featured products'},
-                {
-                    id: '2',
-                    url: '/images/project-1-detail.jpg',
-                    caption: 'Product detail page with customization options'
-                },
-                {id: '3', url: '/images/project-1-cart.jpg', caption: 'Shopping cart with real-time updates'},
-                {
-                    id: '4',
-                    url: '/images/project-1-checkout.jpg',
-                    caption: 'Secure checkout process with Stripe integration'
-                },
-                {id: '5', url: '/images/project-1-admin.jpg', caption: 'Admin dashboard for product management'}
-            ]
-        };
 
-        if (mockProject.slug === slug) {
-            setProject(mockProject);
-            setSelectedImage(mockProject.images[0]?.url || null);
+        const mockProjects = [
+            {
+                id: '1',
+                title: 'NITCommerce Platform',
+                slug: 'nitcommerce-platform',
+                description:
+                    'Fullstack e-commerce platform with a clean architecture, built using Next.js, Node.js, Prisma, and Stripe for seamless shopping and admin control.',
+                content: `
+    <p>NITCommerce is a fullstack e-commerce platform designed to deliver a high-performance shopping experience for end-users, and a simple, scalable management interface for store admins.</p>
+
+    <h3>Project Overview</h3>
+    <p>The goal was to build a custom e-commerce solution from scratch — with responsive UI, secure payments, dynamic product filtering, and an admin dashboard. The stack chosen ensured flexibility, developer experience, and performance from day one.</p>
+
+    <h3>Technical Implementation</h3>
+    <p>The frontend was built with <strong>Next.js</strong> and <strong>Tailwind CSS</strong>, using a mobile-first approach and optimized image delivery via lazy loading. The backend is powered by <strong>Node.js</strong> and <strong>Express.js</strong>, with <strong>Prisma ORM</strong> handling database operations over a PostgreSQL instance.</p>
+
+    <p><strong>Key features:</strong></p>
+    <ul>
+      <li>Responsive product catalog with SSR + advanced filtering</li>
+      <li>JWT-based user authentication and authorization</li>
+      <li>Shopping cart with localStorage + sync fallback</li>
+      <li>Stripe Checkout integration with real-time order tracking</li>
+      <li>Admin dashboard with product and order management</li>
+      <li>Optimized images, lazy loading, and accessibility improvements</li>
+      <li>Unit tests and coverage using <strong>Vitest</strong></li>
+    </ul>
+
+    <h3>Challenges & Solutions</h3>
+    <p>Handling performance at scale was a key challenge — especially with large datasets in the product catalog. This was addressed using dynamic loading, efficient pagination with Prisma, and SSR/ISR hybrid rendering in Next.js to minimize load times.</p>
+
+    <h3>Results</h3>
+    <p>The final platform delivered a 35% increase in conversion rate compared to the client's legacy solution. Performance metrics improved significantly, with a 25% decrease in page load times and higher retention in cart-to-checkout flows.</p>
+  `,
+                technologies: [
+                    'TypeScript',
+                    'Next.js',
+                    'Node.js',
+                    'Express.js',
+                    'Tailwind CSS',
+                    'Prisma',
+                    'PostgreSQL',
+                    'Stripe',
+                    'Vitest'
+                ],
+                websiteUrl: '',
+                githubUrl: 'https://github.com/michelmany/nitcommerce',
+                images: [
+                    {
+                        id: '1',
+                        url: '/images/michelmany-project-nitcommerce.png',
+                        caption: 'Homepage with featured product highlights and hero CTA'
+                    },
+                    {
+                        id: '2',
+                        url: '/images/project-1-detail.jpg',
+                        caption: 'Product detail page with variants and quantity selection'
+                    },
+                    {
+                        id: '3',
+                        url: '/images/project-1-cart.jpg',
+                        caption: 'Shopping cart with real-time sync and quantity updates'
+                    },
+                    {
+                        id: '4',
+                        url: '/images/project-1-checkout.jpg',
+                        caption: 'Secure Stripe-powered checkout flow'
+                    },
+                    {
+                        id: '5',
+                        url: '/images/project-1-admin.jpg',
+                        caption: 'Admin dashboard with product CRUD and order management'
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "title": "ICG School Services Management",
+                "slug": "icg-ssm-app",
+                "description": "Web application for managing school services like transport and billing, built with a modern fullstack architecture.",
+                "content": "\n<p>ICG School Services Management is a custom application built to manage and automate school logistics such as student transport routes, meal subscriptions, and billing workflows.</p>\n\n<h3>Project Overview</h3>\n<p>The platform was created to replace outdated manual processes, providing school administrators and staff with a centralized system to manage student-related services. It supports multiple user roles and offers smart filtering, reporting, and activity tracking.</p>\n\n<h3>Technical Implementation</h3>\n<p>The frontend was built with <strong>Next.js</strong> and <strong>Tailwind CSS</strong>, focusing on performance, responsiveness, and accessibility. The backend API was developed with <strong>Node.js</strong>, <strong>Express.js</strong>, and <strong>Prisma ORM</strong> over a PostgreSQL database.</p>\n\n<ul>\n  <li>Role-based authentication and dashboards (admin, school, parent)</li>\n  <li>Dynamic student service management (transport, meals, billing)</li>\n  <li>Custom reporting tools and CSV data export</li>\n  <li>Secure API with permission layers and route protection</li>\n  <li>Clean codebase following scalable architecture principles</li>\n</ul>\n\n<h3>Challenges & Solutions</h3>\n<p>One challenge was managing service assignments across multiple school branches with separate staff access. This was solved by implementing scoped data visibility and user-specific permission contexts.</p>\n\n<h3>Results</h3>\n<p>The platform streamlined operations, reduced manual errors, and gave administrators better insights through dashboards and reports. Client reported improved workflow efficiency and better parent satisfaction.</p>\n",
+                "technologies": [
+                    "TypeScript",
+                    "Next.js",
+                    "Node.js",
+                    "Express.js",
+                    "Prisma",
+                    "PostgreSQL",
+                    "Tailwind CSS"
+                ]
+            },
+            {
+                "id": "3",
+                "title": "Michel Many Portfolio Website",
+                "slug": "michel-many-portfolio",
+                "description": "Personal portfolio built with a modern stack — optimized for performance, accessibility, and developer experience.",
+                "content": "\n<p>This portfolio website was built to present my professional experience, technical skills, and selected real-world projects in a clean and accessible way.</p>\n\n<h3>Project Overview</h3>\n<p>My goal was to build a fast and minimal site that reflects my profile as a senior developer. It includes dynamic project loading, markdown rendering, dark/light theme switcher, and a custom skill grid.</p>\n\n<h3>Technical Implementation</h3>\n<p>The frontend is developed with <strong>Next.js</strong> using <strong>TypeScript</strong> and styled with <strong>Tailwind CSS</strong>. It uses static generation (SSG) for speed and SEO, and Tailwind's theming API for dark mode.</p>\n\n<ul>\n  <li>Dynamic routing for projects using slugs</li>\n  <li>Custom skill grid with responsive layout and icon badges</li>\n  <li>Dark/light theme toggle with persistence</li>\n  <li>Meta tags for SEO and Open Graph previews</li>\n  <li>Deployed on Vercel with CI pipeline for auto-builds</li>\n</ul>\n\n<h3>Challenges & Solutions</h3>\n<p>The main challenge was managing project data structure while keeping it flexible. I solved this using structured JSON/Markdown and dynamic routing based on slugs for clean URLs.</p>\n\n<h3>Results</h3>\n<p>This website increased recruiter engagement and helped land several freelance and contract opportunities. It's easy to maintain and scale with minimal dependencies.</p>\n",
+                "technologies": [
+                    "TypeScript",
+                    "Next.js",
+                    "Tailwind CSS"
+                ]
+            },
+            {
+                "id": "4",
+                "title": "Custom Gutenberg Blocks with React",
+                "slug": "gutenberg-react-blocks",
+                "description": "Interactive Gutenberg blocks developed using React and TypeScript, designed for high flexibility within WordPress.",
+                "content": "\n<p>This project involved building custom reusable Gutenberg blocks using <strong>React</strong> and <strong>TypeScript</strong> to extend the WordPress block editor for marketing teams.</p>\n\n<h3>Project Overview</h3>\n<p>The objective was to empower non-technical users to create custom layouts without writing code, by delivering blocks with advanced controls, dynamic fields, and scoped styling.</p>\n\n<h3>Technical Implementation</h3>\n<p>Each block was developed as a WordPress plugin using the Gutenberg API and React. Controls were built using the block editor's Inspector components, and the blocks support rich media, layout switching, and dynamic attributes.</p>\n\n<ul>\n  <li>React-based components with inspector and toolbar controls</li>\n  <li>CSS-in-JS + Tailwind classes for scoped visual consistency</li>\n  <li>Dynamic slot fills and reusable layout patterns</li>\n  <li>Accessibility and keyboard navigation support</li>\n</ul>\n\n<h3>Challenges & Solutions</h3>\n<p>One challenge was building flexibility without overwhelming editors. This was solved with well-structured Inspector panels and sane defaults for styling and layout.</p>\n\n<h3>Results</h3>\n<p>The plugin enabled faster content creation and reduced developer dependency across multiple client websites. It was deployed in production on several enterprise WordPress projects.</p>\n",
+                "technologies": [
+                    "TypeScript",
+                    "React",
+                    "WordPress",
+                    "Gutenberg",
+                    "Tailwind CSS"
+                ]
+            }
+        ];
+
+        const foundProject = mockProjects.find(project => project.slug === slug);
+        if (foundProject) {
+            const completeProject: Project = {
+                ...foundProject,
+                images: foundProject.images || []
+            };
+            setProject(completeProject);
+            setSelectedImage(completeProject.images[0]?.url || null);
         }
 
         setIsLoading(false);
@@ -104,7 +178,7 @@ export default function ProjectPage() {
         return (
             <div className="container mx-auto px-4 py-16">
                 <div className="text-center py-20">
-                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">Project Not Found</h2>
+                    <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Project Not Found</h2>
                     <p className="text-slate-600 dark:text-slate-300 mb-8">
                         The project you are looking for does not exist or has been removed.
                     </p>
@@ -135,7 +209,7 @@ export default function ProjectPage() {
 
                 <div className="flex flex-col gap-10">
                     <header>
-                        <h1 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">
+                        <h1 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
                             {project.title}
                         </h1>
                         <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
@@ -218,7 +292,7 @@ export default function ProjectPage() {
 
                         <div className="lg:col-span-2">
                             <div
-                                className="prose dark:prose-invert prose-slate prose-headings:text-slate-900 dark:prose-headings:text-white prose-a:text-teal-600 dark:prose-a:text-teal-400 max-w-none"
+                                className="prose dark:prose-invert prose-slate prose-headings:text-gray-900 dark:prose-headings:text-white prose-a:text-teal-600 dark:prose-a:text-teal-400 max-w-none"
                                 dangerouslySetInnerHTML={{__html: project.content}}
                             />
                         </div>

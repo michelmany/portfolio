@@ -178,7 +178,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                             value={formData.title}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                         />
                     </div>
 
@@ -195,7 +195,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                                 value={formData.slug}
                                 onChange={handleChange}
                                 required
-                                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                             />
                             <button
                                 type="button"
@@ -222,7 +222,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                             value={formData.description}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                         ></textarea>
                         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
                             A short description of the project (used in project cards)
@@ -241,7 +241,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                             value={formData.content}
                             onChange={handleChange}
                             required
-                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                             placeholder="Supports basic HTML tags for formatting"
                         ></textarea>
                         <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
@@ -263,7 +263,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                                 value={technology}
                                 onChange={(e) => setTechnology(e.target.value)}
                                 placeholder="Add a technology"
-                                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                                 onKeyPress={(e) => {
                                     if (e.key === 'Enter') {
                                         e.preventDefault();
@@ -314,7 +314,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                             type="url"
                             value={formData.websiteUrl}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                             placeholder="https://example.com"
                         />
                     </div>
@@ -330,7 +330,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                             type="url"
                             value={formData.githubUrl}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                             placeholder="https://github.com/username/repo"
                         />
                     </div>
@@ -366,7 +366,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                                             type="text"
                                             value={imageUrl}
                                             onChange={(e) => setImageUrl(e.target.value)}
-                                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                                             placeholder="https://example.com/image.jpg"
                                         />
                                     </div>
@@ -380,7 +380,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                                             type="text"
                                             value={imageCaption}
                                             onChange={(e) => setImageCaption(e.target.value)}
-                                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                            className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                                             placeholder="Image description"
                                         />
                                     </div>
@@ -412,7 +412,7 @@ export default function ProjectForm({project, isEditing = false}: ProjectFormPro
                                                 />
                                             </div>
                                             <div className="flex-grow">
-                                                <p className="text-sm text-slate-900 dark:text-white break-words">
+                                                <p className="text-sm text-gray-900 dark:text-white break-words">
                                                     {image.url}
                                                 </p>
                                                 {image.caption && (

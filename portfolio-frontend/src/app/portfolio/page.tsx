@@ -27,33 +27,33 @@ export default function PortfolioPage() {
                 id: '1',
                 title: 'NITCommerce Platform',
                 slug: 'nitcommerce-platform',
-                description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
+                description: 'Custom e-commerce platform built with Next.js, featuring a scalable architecture, Stripe integration, and dynamic product filtering.',
                 technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-                images: [{url: '/images/michelmany-project-nitcommerce.png'}]
+                images: [{ url: '/images/michelmany-project-nitcommerce.png' }]
             },
             {
                 id: '2',
                 title: 'ICG School Services Management',
                 slug: 'icg-ssm-app',
-                description: 'A modern EMS for managing school services and resources built with Next.js and Node.js.',
+                description: 'End-to-end solution for managing school services such as transportation and billing — built with a fullstack architecture using Next.js and Node.js.',
                 technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-                images: [{url: '/images/michelmany-icg-ssm.png'}]
+                images: [{ url: '/images/michelmany-icg-ssm.png' }]
             },
             {
                 id: '3',
-                title: 'Portfolio Project',
+                title: 'Michel Many Portfolio Website',
                 slug: 'michel-many-portfolio',
-                description: 'This is my portfolio website built with Next.js and Node.js.',
+                description: 'This website — a fast, responsive portfolio built with modern tooling including Next.js, TypeScript, and Tailwind CSS.',
                 technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-                images: [{url: '/images/michelmany-project-portfolio-website.png'}]
+                images: [{ url: '/images/michelmany-project-portfolio-website.png' }]
             },
             {
                 id: '4',
-                title: 'Gutenberg React Blocks',
+                title: 'Custom Gutenberg Blocks with React',
                 slug: 'gutenberg-react-blocks',
-                description: 'Interactive custom WP gutenberg blocks built with React.js.',
+                description: 'Interactive Gutenberg blocks built with React and TypeScript for WordPress-based platforms. Accessible, modular, and reusable.',
                 technologies: ['TypeScript', 'Gutenberg', 'React'],
-                images: [{url: '/images/michelmany-gutenberg-blocks.png'}]
+                images: [{ url: '/images/michelmany-gutenberg-blocks.png' }]
             }
         ];
 
@@ -92,11 +92,11 @@ export default function PortfolioPage() {
     return (
         <div className="container mx-auto px-4 py-16">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 text-center">
+                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                     My Portfolio
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
-                    A curated selection of recent projects that highlight my expertise in frontend and fullstack development.
+                    Real-world web applications built with modern, scalable technologies — focused on clean architecture and great user experience.
                 </p>
 
                 {/* Filter Tabs */}
@@ -141,7 +141,7 @@ export default function PortfolioPage() {
                                     />
                                 </div>
                                 <div className="p-6">
-                                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                                         {project.title}
                                     </h3>
                                     <p className="text-slate-600 dark:text-slate-300 mb-4">

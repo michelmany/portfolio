@@ -127,7 +127,7 @@ export default function EditProjectPage() {
                         </Link>
                     </div>
 
-                    <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-4">
+                    <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
                         Error
                     </h1>
                     <p className="text-red-600 dark:text-red-400">
@@ -151,7 +151,7 @@ export default function EditProjectPage() {
                     </Link>
                 </div>
 
-                <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                     Edit Project
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 mb-8">

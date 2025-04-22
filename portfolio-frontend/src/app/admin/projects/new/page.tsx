@@ -18,7 +18,7 @@ export default function NewProjectPage() {
                     </Link>
                 </div>
 
-                <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                     Add New Project
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300 mb-8">

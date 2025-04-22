@@ -48,7 +48,7 @@ export default function ContactPage() {
     return (
         <div className="container mx-auto px-4 py-16">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 text-center">
+                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                     Contact Me
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
@@ -72,7 +72,7 @@ export default function ContactPage() {
                                         value={formData.name}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                                     />
                                 </div>
                                 <div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                        className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                                     />
                                 </div>
                             </div>
@@ -104,7 +104,7 @@ export default function ContactPage() {
                                     value={formData.subject}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
+                                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors"
                                 />
                             </div>
 
@@ -120,7 +120,7 @@ export default function ContactPage() {
                                     value={formData.message}
                                     onChange={handleChange}
                                     required
-                                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors resize-none"
+                                    className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-md bg-white dark:bg-slate-800 text-gray-900 dark:text-white focus:ring-2 focus:ring-teal-500 focus:border-transparent transition-colors resize-none"
                                 ></textarea>
                             </div>
 
@@ -167,7 +167,7 @@ export default function ContactPage() {
                     <div>
                         <div
                             className="bg-white dark:bg-slate-700 rounded-lg shadow-md p-8 border border-slate-200 dark:border-slate-600">
-                            <h2 className="text-xl font-semibold text-slate-900 dark:text-white mb-6">
+                            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-6">
                                 Contact Information
                             </h2>
 
@@ -219,7 +219,7 @@ export default function ContactPage() {
                             </div>
 
                             <div className="mt-8">
-                                <h3 className="text-lg font-medium text-slate-900 dark:text-white mb-4">
+                                <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
                                     Follow Me
                                 </h3>
                                 <div className="flex space-x-4">

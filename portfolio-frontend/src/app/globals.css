@@ -7,6 +7,10 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: -1.2px;
 }
 
+h3 {
+    @apply text-xl mt-4 mb-2;
+}
+
 body {
     font-family: var(--font-inter);
 }

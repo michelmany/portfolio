@@ -83,7 +83,7 @@ export default function AdminDashboardPage() {
     return (
         <div className="space-y-8">
             <div>
-                <h1 className="text-2xl font-bold text-slate-900 dark:text-white mb-1">
+                <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">
                     Dashboard
                 </h1>
                 <p className="text-slate-600 dark:text-slate-300">
@@ -106,7 +106,7 @@ export default function AdminDashboardPage() {
                                 <p className="text-sm font-medium text-slate-600 dark:text-slate-400">
                                     {card.title}
                                 </p>
-                                <p className="text-3xl font-bold text-slate-900 dark:text-white">
+                                <p className="text-3xl font-bold text-gray-900 dark:text-white">
                                     {card.value}
                                 </p>
                             </div>
@@ -118,7 +118,7 @@ export default function AdminDashboardPage() {
             <div
                 className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 overflow-hidden">
                 <div className="p-6 border-b border-slate-200 dark:border-slate-700">
-                    <h2 className="text-lg font-medium text-slate-900 dark:text-white">
+                    <h2 className="text-lg font-medium text-gray-900 dark:text-white">
                         Recent Activity
                     </h2>
                 </div>
@@ -127,7 +127,7 @@ export default function AdminDashboardPage() {
                         <div key={activity.id} className="p-4 sm:px-6">
                             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
                                 <div>
-                                    <p className="text-sm font-medium text-slate-900 dark:text-white">
+                                    <p className="text-sm font-medium text-gray-900 dark:text-white">
                                         {activity.action}
                                     </p>
                                     <p className="text-sm text-slate-600 dark:text-slate-400">
@@ -155,7 +155,7 @@ export default function AdminDashboardPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div
                     className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-6">
-                    <h2 className="text-lg font-medium text-slate-900 dark:text-white mb-4">
+                    <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
                         Quick Actions
                     </h2>
                     <div className="space-y-3">
@@ -194,7 +194,7 @@ export default function AdminDashboardPage() {
 
                 <div
                     className="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-slate-200 dark:border-slate-700 p-6">
-                    <h2 className="text-lg font-medium text-slate-900 dark:text-white mb-4">
+                    <h2 className="text-lg font-medium text-gray-900 dark:text-white mb-4">
                         System Information
                     </h2>
                     <div className="space-y-3">
@@ -214,13 +214,13 @@ export default function AdminDashboardPage() {
                         </div>
                         <div className="flex justify-between">
                             <span className="text-slate-600 dark:text-slate-400">Last Backup</span>
-                            <span className="text-slate-900 dark:text-white">
+                            <span className="text-gray-900 dark:text-white">
                             2 days ago
                           </span>
                         </div>
                         <div className="flex justify-between">
                             <span className="text-slate-600 dark:text-slate-400">Storage Usage</span>
-                            <span className="text-slate-900 dark:text-white">
+                            <span className="text-gray-900 dark:text-white">
                             125 MB / 1 GB
                           </span>
                         </div>

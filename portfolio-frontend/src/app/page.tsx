@@ -101,7 +101,7 @@ export default function Home() {
                         </div>
 
                         <div>
-                            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 dark:text-white mb-4">
+                            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
                                 Michel Moraes
                             </h1>
                             <h2 className="text-2xl md:text-3xl text-teal-600 dark:text-teal-400 mb-6">
@@ -164,7 +164,7 @@ export default function Home() {
             <section className="py-16 bg-slate-50 dark:bg-slate-800/50">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
                             About Me
                         </h2>
                         <div className="prose dark:prose-invert prose-lg mx-auto text-center">
@@ -193,7 +193,7 @@ export default function Home() {
             <section className="py-16">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-8 text-center">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
                             Skills & Technologies
                         </h2>
 
@@ -219,7 +219,7 @@ export default function Home() {
                 <div className="container mx-auto px-4">
                     <div className="max-w-7xl mx-auto">
                         <div className="flex justify-between items-center mb-8">
-                            <h2 className="text-3xl font-bold text-slate-900 dark:text-white">
+                            <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                                 Featured Projects
                             </h2>
                             <Link
@@ -247,7 +247,7 @@ export default function Home() {
                                         />
                                     </div>
                                     <div className="p-6">
-                                        <h3 className="text-xl font-semibold text-slate-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                                        <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                                             {project.title}
                                         </h3>
                                         <p className="text-slate-600 dark:text-slate-300 mb-4">
@@ -281,7 +281,7 @@ export default function Home() {
             <section className="py-16">
                 <div className="container mx-auto px-4">
                     <div className="max-w-4xl mx-auto text-center">
-                        <h2 className="text-3xl font-bold text-slate-900 dark:text-white mb-4">
+                        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                             Let’s Work Together
                         </h2>
                         <p className="text-lg text-slate-600 dark:text-slate-300 mb-8 max-w-2xl mx-auto">

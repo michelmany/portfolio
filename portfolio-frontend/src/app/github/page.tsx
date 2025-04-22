@@ -42,7 +42,7 @@ export default function GithubPage() {
     return (
         <div className="container mx-auto px-4 py-16">
             <div className="max-w-7xl mx-auto">
-                <h1 className="text-4xl font-bold text-slate-900 dark:text-white mb-4 text-center">
+                <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4 text-center">
                     GitHub Projects
                 </h1>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-12 text-center max-w-3xl mx-auto">
@@ -89,7 +89,7 @@ export default function GithubPage() {
                                 className="bg-white dark:bg-slate-700 rounded-lg overflow-hidden shadow-md border border-slate-200 dark:border-slate-600 p-6"
                             >
                                 <div className="flex justify-between items-start mb-4">
-                                    <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
+                                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                                         {repo.name}
                                     </h3>
                                     <a
@@ -162,7 +162,7 @@ export default function GithubPage() {
                         href="https://github.com/michelmany"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white rounded-md transition-colors"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-gray-900 dark:bg-slate-700 dark:hover:bg-slate-600 text-white rounded-md transition-colors"
                     >
                         <span className="font-heading">View All Repositories</span>
                         <ExternalLink className="h-4 w-4"/>

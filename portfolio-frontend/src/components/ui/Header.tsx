@@ -32,11 +32,11 @@ export default function Header() {
 
     if (!mounted) {
         return (
-            <header className="sticky top-0 z-40 w-full border-b bg-background">
+            <header className="sticky top-0 z-40 w-full border-b border-b-slate-200 bg-white dark:border-b-slate-700 dark:bg-gray-900">
                 <div className="container mx-auto flex h-16 items-center justify-between p-4">
                     <div className="flex items-center gap-2">
-                        <Link href="/" className="flex items-center font-bold text-xl">
-                            Michel Many
+                        <Link href="/" className="flex items-center font-bold text-lg">
+                            michelmany.com
                         </Link>
                     </div>
                     <div className="hidden md:flex gap-6">
@@ -52,7 +52,7 @@ export default function Header() {
 
     return (
         <header
-            className="sticky top-0 z-40 w-full border-b border-b-slate-200 bg-white dark:border-b-slate-700 dark:bg-slate-900">
+            className="sticky top-0 z-40 w-full border-b border-b-slate-200 bg-white dark:border-b-slate-700 dark:bg-gray-900">
             <div className="container mx-auto flex h-16 items-center justify-between p-4">
                 <div className="flex items-center gap-2">
                     <Link href="/" className="flex items-center font-bold text-xl text-teal-600 dark:text-teal-400">
@@ -126,7 +126,7 @@ export default function Header() {
 
             {/* Mobile Menu */}
             {mobileMenuOpen && (
-                <div className="md:hidden fixed inset-0 top-16 z-50 bg-white dark:bg-slate-900 p-4">
+                <div className="md:hidden fixed inset-0 top-16 z-50 bg-white dark:bg-gray-900 p-4">
                     <nav className="flex flex-col gap-4 py-4">
                         {navLinks.map((link) => (
                             <Link

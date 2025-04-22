@@ -29,7 +29,7 @@ export default function RootLayout({children}: {
         <html lang="en" suppressHydrationWarning className={`${inter.variable} ${sora.variable}`}>
         <body className={`${inter.className} antialiased`}>
         <ThemeProvider>
-            <div className="flex flex-col min-h-screen bg-white dark:bg-slate-900 text-black dark:text-white">
+            <div className="bg-white dark:bg-gray-900">
                 <Header/>
                 <main className="flex-grow">{children}</main>
                 <Footer/>
