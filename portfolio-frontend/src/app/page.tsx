@@ -30,28 +30,49 @@ export default function Home() {
     // TODO: This should be fetched from my API
     const featuredProjects = [
         {
-            id: '1',
-            title: 'NITCommerce Platform',
-            slug: 'nitcommerce-platform',
-            description: 'A modern e-commerce platform built with Next.js and Stripe integration.',
-            technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-            images: [{url: '/images/michelmany-project-nitcommerce.png'}]
-        },
-        {
             id: '2',
             title: 'ICG School Services Management',
             slug: 'icg-ssm-app',
-            description: 'A modern EMS for managing school services and resources built with Next.js and Node.js.',
-            technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-            images: [{url: '/images/michelmany-icg-ssm.png'}]
+            description: 'End-to-end solution for managing school services such as transportation and billing — built with a fullstack architecture using Next.js and Node.js.',
+            technologies: [
+                'TypeScript',
+                'Next.js',
+                'Node.js',
+                'Express.js',
+                'Tailwind CSS'
+            ],
+            type: "SaaS / Internal Tool",
+            images: [{ url: '/images/michelmany-icg-ssm.png' }]
         },
         {
-            id: '3',
-            title: 'Portfolio Project',
-            slug: 'michel-many-portfolio',
-            description: 'This is my portfolio website built with Next.js and Node.js.',
-            technologies: ['Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-            images: [{url: '/images/michelmany-project-portfolio-website.png'}]
+            id: '1',
+            title: 'NITCommerce Platform',
+            slug: 'nitcommerce-platform',
+            description: 'Custom e-commerce platform built with Next.js, featuring a scalable architecture, Stripe integration, and dynamic product filtering.',
+            technologies: [
+                'TypeScript',
+                'Next.js',
+                'Node.js',
+                'Express.js',
+                'Tailwind CSS'
+            ],
+            type: "E-Commerce Platform",
+            images: [{ url: '/images/michelmany-project-nitcommerce.png' }]
+        },
+        {
+            id: '5',
+            title: 'Bricks Builder Editor',
+            slug: 'bricks-builder-editor',
+            description: 'Frontend development of the visual editor for Bricks — a community-driven site builder for WordPress built with Vue.js.',
+            technologies: [
+                "JavaScript",
+                "Vue.js",
+                "Vuex",
+                "SCSS",
+                "WordPress"
+            ],
+            type: "Site Builder / Visual Editor",
+            images: [{ url: '/images/michelmany-project-bricks-builder.png' }]
         }
     ];
 
@@ -254,7 +275,7 @@ export default function Home() {
                                             {project.description}
                                         </p>
                                         <div className="flex flex-wrap gap-2">
-                                            {project.technologies.slice(0, 4).map((tech) => (
+                                            {project.technologies.slice(0, 3).map((tech) => (
                                                 <span
                                                     key={tech}
                                                     className="px-3 py-1 text-xs bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-full"
@@ -262,10 +283,10 @@ export default function Home() {
                                                   {tech}
                                                 </span>
                                             ))}
-                                            {project.technologies.length > 4 && (
+                                            {project.technologies.length > 3 && (
                                                 <span
                                                     className="px-3 py-1 text-xs bg-slate-100 dark:bg-slate-600 text-slate-700 dark:text-slate-300 rounded-full">
-                                                  +{project.technologies.length - 4}
+                                                  +{project.technologies.length - 3}
                                                 </span>
                                             )}
                                         </div>

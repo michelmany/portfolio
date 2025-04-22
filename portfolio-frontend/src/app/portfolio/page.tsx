@@ -10,6 +10,7 @@ interface Project {
     slug: string;
     description: string;
     technologies: string[];
+    type: string;
     images: { url: string }[];
 }
 
@@ -24,12 +25,13 @@ export default function PortfolioPage() {
         // TODO: Fetch projects from an API
         const mockProjects = [
             {
-                id: '1',
-                title: 'NITCommerce Platform',
-                slug: 'nitcommerce-platform',
-                description: 'Custom e-commerce platform built with Next.js, featuring a scalable architecture, Stripe integration, and dynamic product filtering.',
+                id: '3',
+                title: 'Michel Many Portfolio Website',
+                slug: 'michel-many-portfolio',
+                description: 'This website — a fast, responsive portfolio built with modern tooling including Next.js, TypeScript, and Tailwind CSS.',
                 technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-                images: [{ url: '/images/michelmany-project-nitcommerce.png' }]
+                type: "Portfolio / Personal Site",
+                images: [{ url: '/images/michelmany-project-portfolio-website.png' }]
             },
             {
                 id: '2',
@@ -37,22 +39,32 @@ export default function PortfolioPage() {
                 slug: 'icg-ssm-app',
                 description: 'End-to-end solution for managing school services such as transportation and billing — built with a fullstack architecture using Next.js and Node.js.',
                 technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
+                type: "SaaS / Internal Tool",
                 images: [{ url: '/images/michelmany-icg-ssm.png' }]
             },
             {
-                id: '3',
-                title: 'Michel Many Portfolio Website',
-                slug: 'michel-many-portfolio',
-                description: 'This website — a fast, responsive portfolio built with modern tooling including Next.js, TypeScript, and Tailwind CSS.',
+                id: '1',
+                title: 'NITCommerce Platform',
+                slug: 'nitcommerce-platform',
+                description: 'Custom e-commerce platform built with Next.js, featuring a scalable architecture, Stripe integration, and dynamic product filtering.',
                 technologies: ['TypeScript', 'Next.js', 'Node.js', 'Express.js', 'Tailwind CSS'],
-                images: [{ url: '/images/michelmany-project-portfolio-website.png' }]
+                type: "E-Commerce Platform",
+                images: [{ url: '/images/michelmany-project-nitcommerce.png' }]
             },
+
             {
                 id: '4',
                 title: 'Custom Gutenberg Blocks with React',
                 slug: 'gutenberg-react-blocks',
                 description: 'Interactive Gutenberg blocks built with React and TypeScript for WordPress-based platforms. Accessible, modular, and reusable.',
-                technologies: ['TypeScript', 'Gutenberg', 'React'],
+                technologies: [
+                    "TypeScript",
+                    "React",
+                    "WordPress",
+                    "Gutenberg",
+                    "Tailwind CSS"
+                ],
+                type: "WordPress Customization",
                 images: [{ url: '/images/michelmany-gutenberg-blocks.png' }]
             },
             {
@@ -60,7 +72,14 @@ export default function PortfolioPage() {
                 title: 'Bricks Builder Editor',
                 slug: 'bricks-builder-editor',
                 description: 'Frontend development of the visual editor for Bricks — a community-driven site builder for WordPress built with Vue.js.',
-                technologies: ['JavaScript', 'Vue.js', 'Vuex', 'SCSS', 'WordPress'],
+                technologies: [
+                    "JavaScript",
+                    "Vue.js",
+                    "Vuex",
+                    "SCSS",
+                    "WordPress"
+                ],
+                type: "Site Builder / Visual Editor",
                 images: [{ url: '/images/michelmany-project-bricks-builder.png' }]
             }
         ];
@@ -77,7 +96,7 @@ export default function PortfolioPage() {
         const applyFilter = () => {
             const filtered = filter === 'all'
                 ? projects
-                : projects.filter(project => project.technologies.includes(filter));
+                : projects.filter(project => project.type.includes(filter));
 
             setIsTransitioning(true);
 
@@ -95,7 +114,7 @@ export default function PortfolioPage() {
     }, [filter, projects, isLoading]);
 
     // Get unique technologies from all projects
-    const allTechnologies = ['all', ...new Set(projects.flatMap(p => p.technologies))];
+    const allTypes = ['all', ...new Set(projects.map(p => p.type).filter(Boolean))];
 
     return (
         <div className="container mx-auto px-4 py-16">
@@ -109,7 +128,7 @@ export default function PortfolioPage() {
 
                 {/* Filter Tabs */}
                 <div className="flex flex-wrap justify-center gap-2 mb-12">
-                    {allTechnologies.map((tech) => (
+                    {allTypes.map((tech) => (
                         <button
                             key={tech}
                             onClick={() => setFilter(tech)}
