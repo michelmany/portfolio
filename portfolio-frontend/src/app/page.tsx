@@ -129,7 +129,7 @@ export default function Home() {
                                 Senior Frontend & Full Stack Engineer
                             </h2>
                             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
-                                I build performant, scalable web applications using <strong>TypeScript, React, and Next.js</strong> — with a focus on maintainable architecture, reusability, and developer experience.
+                                I build performant, scalable web applications using TypeScript, React, and Next.js — with a focus on maintainable architecture, developer experience, and pixel-perfect UI implementation.
                             </p>
                             <p className="text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-8">
                                 On the backend, I work with <strong>Node.js, Express, and Prisma ORM</strong>, designing robust APIs and data layers when fullstack capabilities are needed.
@@ -187,7 +187,7 @@ export default function Home() {
                         </h2>
                         <div className="prose dark:prose-invert prose-lg mx-auto text-center">
                             <p className="text-lg mb-5">
-                                I’m Michel — a frontend-focused fullstack engineer with <strong>12+</strong> years of experience delivering fast, reliable, and scalable web applications. I specialize in building clean, accessible UIs using <strong>React, Next.js, and TypeScript</strong>.
+                                I’m Michel — a frontend-focused fullstack engineer with <strong>12+</strong> years of experience delivering fast, reliable, and scalable web applications. I specialize in building clean, accessible UIs using <strong>TypeScript, React and Next.js</strong> — with a strong design sensibility and a track record of implementing pixel-perfect Figma-to-code interfaces.
                             </p>
                             <p className="mb-5 max-w-2xl mx-auto">
                                 On the backend, I’m experienced with <strong>Node.js, Express</strong>, and <strong>Prisma</strong>, building robust APIs and working across the full data lifecycle when needed. I prioritize maintainable code, performance, and long-term scalability.
