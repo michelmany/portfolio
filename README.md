@@ -1,16 +1,17 @@
 # michelmany.com
 
-Website of **Michel Many**, the commercial brand through which Michel Moraes
-provides software engineering for agencies and product teams. Engagements are
-contracted through Michel Many Limited (UK) or Michel Moraes as a self-employed
-professional in Spain.
+Website of **Michel Many**, the software engineering services brand led by
+Michel Moraes, for agencies and product teams. It also holds Michel's
+experience and CV (About & Experience). Engagements are contracted through
+Michel Many Limited (UK) or Michel Moraes as a self-employed professional in
+Spain.
 
 ## Structure
 
 - `portfolio-frontend/`: the website (Next.js App Router, TypeScript, Tailwind CSS v4).
 - `portfolio-backend/`: legacy Express API from the previous personal portfolio. Not used by the website.
-- `archive/personal-site/`: personal content removed from the public site, kept for the future personal website. Not built or served.
-- `docs/personal-site-migration.md`: removed URLs, archived content and pending decisions.
+- `archive/personal-site/`: content from the previous site that is not published (unconfirmed projects, old pages). Not built or served.
+- `docs/content-audit.md`: how work is organised, old URLs, and projects held back.
 
 ## Website
 
@@ -27,6 +28,7 @@ npm run build
 Editable content lives in `portfolio-frontend/src/content/`:
 
 - `site.ts`: brand details, contracting entities and navigation.
+- `profile.ts`: Michel's experience, skills, education and CV (source: the 2026 CV).
 - `services.ts`: services and engagement models.
 - `work.ts`: selected work. Read the rules at the top of the file before adding an engagement.
 

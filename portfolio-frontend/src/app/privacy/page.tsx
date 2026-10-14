@@ -44,13 +44,13 @@ const sections = [
     },
     {
         id: 'collect',
-        heading: 'What we collect',
+        heading: 'What I collect',
         body: (
             <>
                 <p>
-                    We only collect personal data that you choose to send us. If you use the{' '}
-                    <Link href="/contact" className="link text-ink">contact form</Link>, we receive your name, work
-                    email, company (if provided) and your message. If you email us directly, we receive your email and
+                    I only collect personal data that you choose to send. If you use the{' '}
+                    <Link href="/contact" className="link text-ink">contact form</Link>, I receive your name, email,
+                    company (if provided) and your message. If you email me directly, I receive your email and
                     whatever it contains.
                 </p>
                 <p>
@@ -61,13 +61,13 @@ const sections = [
     },
     {
         id: 'use',
-        heading: 'How we use it',
+        heading: 'How I use it',
         body: (
             <p>
-                We use your details to reply to your enquiry and, if we go on to work together, to discuss and arrange
-                that work. We do this because it is in our legitimate interests to respond to business enquiries, and,
-                where relevant, to take steps at your request before entering into a contract. We do not sell your
-                data or use it for marketing lists.
+                I use your details to reply to your message and, if we go on to work together, to discuss and arrange
+                that work. I do this because it is in my legitimate interests to respond to enquiries, and, where
+                relevant, to take steps at your request before entering into a contract. I do not sell your data or
+                use it for marketing lists.
             </p>
         ),
     },
@@ -77,12 +77,12 @@ const sections = [
         body: (
             <>
                 <p>
-                    Contact form submissions are delivered to our inbox by email using Twilio SendGrid, which acts as
-                    our email delivery provider. SendGrid may process data outside the UK and the EU; transfers are covered by
+                    Contact form submissions are delivered to my inbox by email using Twilio SendGrid, which acts as
+                    the email delivery provider. SendGrid may process data outside the UK and the EU; transfers are covered by
                     its own data protection terms.
                 </p>
                 <p>
-                    Like any website, our hosting provider may record technical information such as IP addresses in
+                    Like any website, the hosting provider may record technical information such as IP addresses in
                     server logs in order to operate and secure the service.
                 </p>
             </>
@@ -90,10 +90,10 @@ const sections = [
     },
     {
         id: 'retention',
-        heading: 'How long we keep it',
+        heading: 'How long I keep it',
         body: (
             <p>
-                We keep enquiries for as long as needed to handle them and any business relationship that follows,
+                I keep messages for as long as needed to handle them and any business relationship that follows,
                 and delete them when they are no longer needed.
             </p>
         ),

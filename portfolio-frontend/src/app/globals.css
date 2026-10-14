@@ -126,6 +126,17 @@ p {
     text-decoration-color: currentColor;
 }
 
+/* Typographic project cover: a quiet grid with an accent glow. */
+.work-cover {
+    background-color: var(--surface);
+    background-image:
+        radial-gradient(circle at 100% 0%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 55%),
+        linear-gradient(var(--line) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size: 100% 100%, 32px 32px, 32px 32px;
+    background-position: 0 0, -1px -1px, -1px -1px;
+}
+
 /* Gentle entrance for page content; disabled for reduced motion. */
 @keyframes rise {
     from {

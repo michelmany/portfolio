@@ -18,8 +18,8 @@ export default function ServicesPage() {
                     Senior engineering, from interface to integration.
                 </h1>
                 <p className="rise rise-delay mt-8 max-w-2xl text-lg text-ink-soft sm:text-xl">
-                    Michel Many provides frontend and full-stack engineering to agencies and product teams. Our
-                    specialism is the frontend; our full-stack capability covers the APIs, data and platform work around it.
+                    Michel Many provides frontend and full-stack engineering to agencies and product teams. The
+                    specialism is the frontend, with full-stack capability covering the APIs, data and platform work around it.
                 </p>
             </section>
 
@@ -56,7 +56,7 @@ export default function ServicesPage() {
                 <div className="wrap py-20 md:py-28">
                     <p className="eyebrow">Engagement models</p>
                     <h2 id="models-heading" className="mt-4 max-w-2xl text-3xl font-semibold sm:text-4xl">
-                        How we work with your team
+                        Engagement models
                     </h2>
                     <p className="mt-4 max-w-2xl text-ink-soft">
                         All work is contracted business to business. The scope and arrangement are agreed with you

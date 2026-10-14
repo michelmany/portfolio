@@ -43,20 +43,17 @@ export const viewport: Viewport = {
     ],
 };
 
-const organisationJsonLd = {
+// "Michel Many" is a brand, not a legal entity, so it is described as a
+// WebSite. Michel Many Limited is described as an Organization on /legal.
+const websiteJsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Organization',
-    '@id': `${site.url}/#organization`,
+    '@type': 'WebSite',
+    '@id': `${site.url}/#website`,
     name: site.name,
     url: site.url,
-    email: site.email,
     description: site.description,
-    contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'sales',
-        email: site.email,
-        availableLanguage: ['English'],
-    },
+    inLanguage: 'en-GB',
+    author: {'@id': `${site.url}/about#person`},
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -65,7 +62,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <body className="flex min-h-dvh flex-col antialiased">
         <a
             href="#main"
-            className="sr-only z-50 rounded-full bg-accent px-4 py-2 text-accent-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+            className="sr-only z-50 rounded-full bg-accent text-accent-ink focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:px-4 focus:py-2"
         >
             Skip to content
         </a>
@@ -74,7 +71,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         <Footer/>
         <script
             type="application/ld+json"
-            dangerouslySetInnerHTML={{__html: JSON.stringify(organisationJsonLd)}}
+            dangerouslySetInnerHTML={{__html: JSON.stringify(websiteJsonLd)}}
         />
         </body>
         </html>

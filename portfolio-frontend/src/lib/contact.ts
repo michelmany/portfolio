@@ -30,9 +30,9 @@ export function validateContact(input: Partial<Record<ContactField, unknown>>): 
     const errors: Partial<Record<ContactField, string>> = {};
 
     if (!data.name) errors.name = 'Please enter your name.';
-    if (!data.email) errors.email = 'Please enter your work email.';
+    if (!data.email) errors.email = 'Please enter your email address.';
     else if (!EMAIL_PATTERN.test(data.email)) errors.email = 'Please enter a valid email address.';
-    if (!data.message) errors.message = 'Please tell us a little about your project or needs.';
+    if (!data.message) errors.message = 'Please enter a message.';
 
     (Object.keys(CONTACT_LIMITS) as ContactField[]).forEach((field) => {
         if (!errors[field] && data[field].length > CONTACT_LIMITS[field]) {

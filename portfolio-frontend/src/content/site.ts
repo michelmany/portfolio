@@ -5,7 +5,7 @@
 // referring specifically to the UK company.
 export const site = {
     name: 'Michel Many',
-    url: 'https://michelmany.com',
+    url: 'https://www.michelmany.com',
     email: 'hello@michelmany.com',
     tagline: 'Software engineering for agencies and product teams.',
     description:
@@ -40,13 +40,12 @@ export const contractingEntities = [
 ] as const;
 
 export const contracting = {
-    heading: 'UK and EU contracting available.',
-    body: 'Engagements can be arranged through Michel Many Limited in the United Kingdom or Michel Moraes as a self-employed professional in Spain. The contracting entity is confirmed in each proposal and agreement.',
+    body: 'B2B engagements can be arranged through Michel Many Limited in the United Kingdom or Michel Moraes as a self-employed professional in Spain. The contracting entity is confirmed in each proposal and agreement.',
 } as const;
 
 export const navigation = [
     {name: 'Services', href: '/services'},
-    {name: 'Selected Work', href: '/work'},
-    {name: 'About', href: '/about'},
+    {name: 'Work', href: '/work'},
+    {name: 'About & Experience', href: '/about'},
     {name: 'Contact', href: '/contact'},
 ] as const;

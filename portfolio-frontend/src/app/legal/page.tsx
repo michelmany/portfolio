@@ -8,6 +8,26 @@ export const metadata = pageMetadata({
     path: '/legal',
 });
 
+const uk = contractingEntities.find((entity) => entity.id === 'uk');
+
+const organisationJsonLd = uk && {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    '@id': `${site.url}/legal#michel-many-limited`,
+    name: uk.name,
+    legalName: uk.name,
+    url: site.url,
+    email: site.email,
+    identifier: {'@type': 'PropertyValue', propertyID: 'UK Companies House number', value: '16058356'},
+    address: {
+        '@type': 'PostalAddress',
+        streetAddress: '86-90 Paul Street',
+        addressLocality: 'London',
+        postalCode: 'EC2A 4NE',
+        addressCountry: 'GB',
+    },
+};
+
 export default function LegalPage() {
     return (
         <section aria-labelledby="page-heading" className="wrap pb-20 pt-16 sm:pt-24 md:pb-28">
@@ -63,6 +83,13 @@ export default function LegalPage() {
                     </p>
                 </section>
             </div>
+
+            {organisationJsonLd && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{__html: JSON.stringify(organisationJsonLd)}}
+                />
+            )}
         </section>
     );
 }

@@ -60,14 +60,14 @@ export async function POST(request: Request) {
             from: MAIL_FROM,
             replyTo: email,
             subject: `New enquiry from ${name.replace(/[\r\n]+/g, ' ')}${company ? ` (${company.replace(/[\r\n]+/g, ' ')})` : ''}`,
-            text: `Name: ${name}\nWork email: ${email}\nCompany: ${company || 'Not provided'}\n\nProject or engineering needs:\n${message}`,
+            text: `Name: ${name}\nEmail: ${email}\nCompany: ${company || 'Not provided'}\n\nMessage:\n${message}`,
             html: `
         <div>
           <h2>New enquiry via michelmany.com</h2>
           <p><strong>Name:</strong> ${safe.name}</p>
-          <p><strong>Work email:</strong> ${safe.email}</p>
+          <p><strong>Email:</strong> ${safe.email}</p>
           <p><strong>Company:</strong> ${safe.company}</p>
-          <p><strong>Project or engineering needs:</strong><br>${safe.message}</p>
+          <p><strong>Message:</strong><br>${safe.message}</p>
         </div>
       `,
         });

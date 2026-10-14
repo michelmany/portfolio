@@ -8,7 +8,7 @@ type Props = {
 
 export default function ContactCta({
     heading = 'Need senior engineering capacity?',
-    body = 'Tell us about the project, the team and the timeline. We will reply to let you know whether Michel Many is a good fit.',
+    body = 'Share a few details about the project, the team and the timeline to start the conversation.',
 }: Props) {
     return (
         <section aria-labelledby="contact-cta" className="border-t border-line">

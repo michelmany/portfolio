@@ -20,7 +20,7 @@ const fields: {
     required: boolean;
 }[] = [
     {id: 'name', label: 'Name', autoComplete: 'name', required: true},
-    {id: 'email', label: 'Work email', type: 'email', autoComplete: 'email', required: true},
+    {id: 'email', label: 'Email', type: 'email', autoComplete: 'email', required: true},
     {id: 'company', label: 'Company', autoComplete: 'organization', required: false},
 ];
 
@@ -86,7 +86,7 @@ export default function ContactForm() {
             <div role="status" className="rounded-2xl border border-line bg-success-soft p-8">
                 <h2 className="text-2xl font-semibold">Thank you. Your message has been sent.</h2>
                 <p className="mt-3 text-ink-soft">
-                    We have received your enquiry and will reply to the email address you provided.
+                    I will reply to the email address you provided.
                 </p>
                 <button
                     type="button"
@@ -138,7 +138,7 @@ export default function ContactForm() {
                 ))}
 
                 <div className="sm:col-span-2">
-                    <label htmlFor="message" className="text-sm font-medium">Project or engineering needs</label>
+                    <label htmlFor="message" className="text-sm font-medium">Message</label>
                     <textarea
                         id="message"
                         name="message"
@@ -168,7 +168,7 @@ export default function ContactForm() {
                     disabled={submitting}
                     className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-6 text-[0.9375rem] font-medium text-accent-ink transition hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                    {submitting ? 'Sending…' : 'Send enquiry'}
+                    {submitting ? 'Sending…' : 'Send message'}
                 </button>
             </div>
 
@@ -177,8 +177,8 @@ export default function ContactForm() {
                     <div role="alert" className="rounded-lg bg-danger-soft p-4 text-sm text-danger">
                         <p>{status.message}</p>
                         <p className="mt-1">
-                            You can also email us directly at{' '}
-                            <a href={`mailto:${site.email}`} className="link font-medium">{site.email}</a>.
+                            You can also email{' '}
+                            <a href={`mailto:${site.email}`} className="link font-medium">{site.email}</a> directly.
                         </p>
                     </div>
                 )}

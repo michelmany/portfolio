@@ -1,9 +1,13 @@
+import Image from 'next/image';
 import Link from 'next/link';
+import {ArrowUpRight} from 'lucide-react';
 import ButtonLink from '@/components/ui/ButtonLink';
 import ContactCta from '@/components/sections/ContactCta';
 import WorkList from '@/components/sections/WorkList';
+import WorkMedia from '@/components/sections/WorkMedia';
 import {engagementModels, services} from '@/content/services';
-import {engagements} from '@/content/work';
+import {clientEngagements, products} from '@/content/work';
+import {profile} from '@/content/profile';
 import {pageMetadata} from '@/lib/metadata';
 import {site} from '@/content/site';
 
@@ -19,17 +23,19 @@ export default function HomePage() {
         <>
             {/* 1. Hero */}
             <section aria-labelledby="hero-heading" className="wrap pb-20 pt-16 sm:pt-24 md:pb-28 md:pt-32">
-                <p className="eyebrow rise">{site.tagline}</p>
                 <h1
                     id="hero-heading"
-                    className="rise mt-6 max-w-[22ch] text-[2.125rem] font-semibold leading-[1.08] sm:text-5xl md:text-[3.75rem]"
+                    className="rise max-w-[16ch] text-[2.5rem] font-semibold leading-[1.04] sm:text-6xl md:text-[4.5rem]"
                 >
+                    {site.tagline}
+                </h1>
+                <p className="rise rise-delay mt-8 max-w-2xl text-lg text-ink sm:text-xl">
                     Michel Many provides senior frontend and full-stack engineering for web applications, enterprise
                     platforms and SaaS products.
-                </h1>
-                <p className="rise rise-delay mt-8 max-w-2xl text-lg text-ink-soft sm:text-xl">
-                    We support international teams through B2B contracts, embedded engineering engagements and project
-                    delivery.
+                </p>
+                <p className="rise rise-delay mt-4 max-w-2xl text-ink-soft">
+                    Led by Michel Moraes, a senior software engineer with 15+ years of experience working with
+                    international teams.
                 </p>
                 <div className="rise rise-delay mt-10 flex flex-wrap gap-3">
                     <ButtonLink href="/contact">Discuss a project</ButtonLink>
@@ -44,7 +50,7 @@ export default function HomePage() {
                         <div>
                             <p className="eyebrow">Services</p>
                             <h2 id="services-heading" className="mt-4 text-3xl font-semibold sm:text-4xl">
-                                What we provide
+                                Engineering services
                             </h2>
                         </div>
                         <Link href="/services" className="link text-ink-soft">All services</Link>
@@ -76,14 +82,14 @@ export default function HomePage() {
                                 Engineering with agencies and product teams
                             </h2>
                             <p className="mt-4 max-w-2xl text-ink-soft">
-                                Much of our work happens inside agency teams. Each engagement shows who we worked
-                                through and what we contributed.
+                                Much of this work happens inside agency teams. Each engagement shows the agency or
+                                company it was done through and the engineering contribution.
                             </p>
                         </div>
                         <Link href="/work" className="link shrink-0 text-ink-soft">All work</Link>
                     </div>
                     <div className="mt-12">
-                        <WorkList items={engagements}/>
+                        <WorkList items={clientEngagements}/>
                     </div>
                 </div>
             </section>
@@ -92,7 +98,7 @@ export default function HomePage() {
             <section aria-labelledby="models-heading" className="border-t border-line bg-surface">
                 <div className="wrap grid gap-12 py-20 md:grid-cols-[1fr_2fr] md:py-28">
                     <div>
-                        <p className="eyebrow">How we work together</p>
+                        <p className="eyebrow">Collaboration</p>
                         <h2 id="models-heading" className="mt-4 text-3xl font-semibold sm:text-4xl">
                             Ways to engage
                         </h2>
@@ -111,32 +117,79 @@ export default function HomePage() {
                 </div>
             </section>
 
-            {/* 5. Company */}
-            <section aria-labelledby="company-heading" className="border-t border-line">
+            {/* 5. Independent product */}
+            {products.map((product) => (
+                <section key={product.slug} aria-labelledby={`${product.slug}-heading`} className="border-t border-line">
+                    <div className="wrap grid gap-8 py-20 md:grid-cols-[1fr_2fr] md:py-28">
+                        <div>
+                            <p className="eyebrow">Independent product</p>
+                            <h2 id={`${product.slug}-heading`} className="mt-4 text-3xl font-semibold sm:text-4xl">
+                                {product.title}
+                            </h2>
+                        </div>
+                        <div className="max-w-3xl">
+                            <Link href={`/work/${product.slug}`} className="mb-8 block" tabIndex={-1} aria-hidden>
+                                <WorkMedia item={product} sizes="(min-width: 768px) 66vw, 100vw" decorative/>
+                            </Link>
+                            <p className="text-lg text-ink-soft">{product.summary}</p>
+                            {product.technologies && (
+                                <p className="eyebrow mt-5">{product.technologies.join(' · ')}</p>
+                            )}
+                            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+                                <Link href={`/work/${product.slug}`} className="link text-ink">
+                                    About {product.title}
+                                </Link>
+                                {product.links?.slice(0, 1).map((link) => (
+                                    <a
+                                        key={link.href}
+                                        href={link.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="link inline-flex items-center gap-1 text-ink-soft"
+                                    >
+                                        {link.label}
+                                        <ArrowUpRight className="h-4 w-4" aria-hidden/>
+                                        <span className="sr-only">(opens in a new tab)</span>
+                                    </a>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            ))}
+
+            {/* 6. Michel */}
+            <section aria-labelledby="michel-heading" className="border-t border-line bg-surface">
                 <div className="wrap grid gap-8 py-20 md:grid-cols-[1fr_2fr] md:py-28">
                     <div>
-                        <p className="eyebrow">About</p>
-                        <h2 id="company-heading" className="mt-4 text-3xl font-semibold sm:text-4xl">
-                            Michel Many
+                        <p className="eyebrow">Who leads the work</p>
+                        <h2 id="michel-heading" className="mt-4 text-3xl font-semibold sm:text-4xl">
+                            {profile.name}
                         </h2>
                     </div>
-                    <div className="max-w-2xl space-y-5 text-lg text-ink-soft">
-                        <p>
-                            Michel Many provides software engineering to digital agencies, consultancies and product
-                            teams that need senior engineering capacity.
-                        </p>
-                        <p>
-                            It is led by Michel Moraes, a software engineer with 15+ years of experience in frontend and
-                            full-stack development. Engagements can be contracted in the UK or in Spain.
-                        </p>
-                        <p>
-                            <Link href="/about" className="link text-ink">More about Michel Many</Link>
-                        </p>
+                    <div className="flex max-w-2xl flex-col gap-6 sm:flex-row sm:items-start">
+                        <Image
+                            src={profile.photo}
+                            alt={profile.name}
+                            width={80}
+                            height={80}
+                            className="h-20 w-20 shrink-0 rounded-full object-cover grayscale"
+                        />
+                        <div className="space-y-5 text-lg text-ink-soft">
+                            <p>
+                                Michel Many is led by Michel Moraes, a senior software engineer with 15+ years of
+                                experience in frontend and full-stack development, working with international and
+                                distributed teams.
+                            </p>
+                            <p>
+                                <Link href="/about" className="link text-ink">About &amp; Experience</Link>
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* 6. Commercial CTA */}
+            {/* 7. Contact */}
             <ContactCta/>
         </>
     );
