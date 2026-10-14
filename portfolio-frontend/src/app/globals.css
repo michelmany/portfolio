@@ -1,35 +1,156 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-sora);
-    letter-spacing: -1.2px;
+/* Colour tokens. Light is the default; dark follows the system preference. */
+:root {
+    --paper: #f5f4f0;
+    --surface: #fbfaf7;
+    --ink: #14161a;
+    --ink-soft: #3d424b;
+    --muted: #5f6570;
+    --line: #dcd9d1;
+    --line-strong: #b9b5ab;
+    --accent: #1d5b4f;
+    --accent-ink: #ffffff;
+    --accent-soft: #e2ece8;
+    --focus: #1d5b4f;
+    --danger: #a32d1f;
+    --danger-soft: #f8e6e2;
+    --success: #1d5b4f;
+    --success-soft: #e2ece8;
+    color-scheme: light;
 }
 
-h3 {
-    @apply text-xl mt-4 mb-2;
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #111315;
+        --surface: #181b1e;
+        --ink: #eceae4;
+        --ink-soft: #c9c7c0;
+        --muted: #9a9ea6;
+        --line: #2b2f34;
+        --line-strong: #454a51;
+        --accent: #7cc7b5;
+        --accent-ink: #0d1412;
+        --accent-soft: #1b2a26;
+        --focus: #7cc7b5;
+        --danger: #f0a596;
+        --danger-soft: #2e1a16;
+        --success: #7cc7b5;
+        --success-soft: #1b2a26;
+        color-scheme: dark;
+    }
+}
+
+@theme inline {
+    --color-paper: var(--paper);
+    --color-surface: var(--surface);
+    --color-ink: var(--ink);
+    --color-ink-soft: var(--ink-soft);
+    --color-muted: var(--muted);
+    --color-line: var(--line);
+    --color-line-strong: var(--line-strong);
+    --color-accent: var(--accent);
+    --color-accent-ink: var(--accent-ink);
+    --color-accent-soft: var(--accent-soft);
+    --color-danger: var(--danger);
+    --color-danger-soft: var(--danger-soft);
+    --color-success: var(--success);
+    --color-success-soft: var(--success-soft);
+    --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+    --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 5rem;
 }
 
 body {
-    font-family: var(--font-inter);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-feature-settings: "ss01", "cv11";
+    text-rendering: optimizeLegibility;
 }
 
-.font-heading {
-    font-family: var(--font-sora);
+h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
+    text-wrap: balance;
 }
 
-@keyframes fadeIn {
+p {
+    text-wrap: pretty;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--accent-ink);
+}
+
+:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+}
+
+/* Shared layout container: 16px gutters on phones, wider on larger screens. */
+.wrap {
+    width: 100%;
+    max-width: 76rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+@media (min-width: 640px) {
+    .wrap {
+        padding-inline: 2rem;
+    }
+}
+
+.eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.link {
+    text-decoration: underline;
+    text-decoration-color: var(--line-strong);
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 150ms ease, color 150ms ease;
+}
+
+.link:hover {
+    text-decoration-color: currentColor;
+}
+
+/* Gentle entrance for page content; disabled for reduced motion. */
+@keyframes rise {
     from {
         opacity: 0;
-        transform: scale(0.95);
+        transform: translateY(8px);
     }
     to {
         opacity: 1;
-        transform: scale(1);
+        transform: none;
     }
 }
 
-.animate-fadeIn {
-    animation: fadeIn 0.3s ease-in-out forwards;
+.rise {
+    animation: rise 500ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+.rise-delay {
+    animation-delay: 120ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

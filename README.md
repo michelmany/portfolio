@@ -1,27 +1,37 @@
-# Portfolio Project
+# michelmany.com
 
-This monorepo contains both the frontend and backend code for my portfolio website.
+Website of **Michel Many**, the commercial brand through which Michel Moraes
+provides software engineering for agencies and product teams. Engagements are
+contracted through Michel Many Limited (UK) or Michel Moraes as a self-employed
+professional in Spain.
 
 ## Structure
 
-- `portfolio-frontend`: Next.js frontend application
-- `portfolio-backend`: Node.js Express backend API
+- `portfolio-frontend/`: the website (Next.js App Router, TypeScript, Tailwind CSS v4).
+- `portfolio-backend/`: legacy Express API from the previous personal portfolio. Not used by the website.
+- `archive/personal-site/`: personal content removed from the public site, kept for the future personal website. Not built or served.
+- `docs/personal-site-migration.md`: removed URLs, archived content and pending decisions.
 
-## Getting Started
+## Website
 
-### Prerequisites
+```bash
+cd portfolio-frontend
+npm ci
+npm run dev     # http://localhost:3000
+npm run lint
+npm run build
+```
 
-- Node.js (v16 or later)
-- npm or yarn
-- Docker and Docker Compose (for local development)
+### Content
 
-### Development
+Editable content lives in `portfolio-frontend/src/content/`:
 
-1. Clone this repository
-2. Run `docker-compose up -d` to start all services
-3. Access the frontend at http://localhost:3000
-4. The API is available at http://localhost:5000
+- `site.ts`: brand details, contracting entities and navigation.
+- `services.ts`: services and engagement models.
+- `work.ts`: selected work. Read the rules at the top of the file before adding an engagement.
 
-## License
+### Contact form
 
-[MIT](LICENSE)
+`POST /api/contact` sends enquiries with SendGrid to `hello@michelmany.com`.
+It requires the `SENDGRID_API_KEY` environment variable. Without it, the form
+reports that it is unavailable and points visitors to the email address.
